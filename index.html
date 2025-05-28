@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solemare Apartment - Apartament w Kątach Rybackich</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Solemare Apartment</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-translate="nav.home">Strona główna</a></li>
+                <li><a href="#gallery" data-translate="nav.gallery">Galeria</a></li>
+                <li><a href="#location" data-translate="nav.location">Lokalizacja</a></li>
+                <li><a href="#contact" data-translate="nav.contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="pl">
+                    <img src="images/pl-flag.png" alt="Polski" width="20" height="15">
+                </button>
+                <button class="lang-btn" data-lang="en">
+                    <img src="images/en-flag.png" alt="English" width="20" height="15">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 data-translate="hero.title">Apartament Solemare</h1>
+                <p data-translate="hero.subtitle">Wypoczynek w sercu Kątów Rybackich</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2 data-translate="sections.gallery">Galeria</h2>
+            <div class="gallery-grid">
+                <!-- Gallery images will be added here -->
+            </div>
+        </section>
+
+        <section id="location" class="location">
+            <h2 data-translate="sections.location">Lokalizacja</h2>
+            <div id="map" class="map-container"></div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 data-translate="sections.contact">Kontakt</h2>
+            <form id="contact-form" action="https://formspree.io/f/{{ENV_FORMSPREE_ID}}" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" required data-translate-placeholder="contact.name"
+                        placeholder="Imię i nazwisko">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" required data-translate-placeholder="contact.email"
+                        placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" required data-translate-placeholder="contact.message"
+                        placeholder="Wiadomość"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-translate="contact.submit">Wyślij</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p data-translate="footer.copyright">&copy; 2024 Solemare Apartment. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script src="js/env.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/language.js"></script>
+</body>
+
+</html>

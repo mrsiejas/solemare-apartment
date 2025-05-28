@@ -1,0 +1,11 @@
+[site]
+bucket = "./"
+entry-point = "."
+
+[build]
+command = ""
+upload.format = "directory"
+
+[env.production]
+name = "solemare-apartment"
+workers_dev = true 
