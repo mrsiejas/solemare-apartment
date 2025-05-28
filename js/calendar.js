@@ -1,6 +1,6 @@
 // Google Calendar integration
 function initCalendar() {
-    const calendarId = ENV_GOOGLE_CALENDAR_ID;
+    const calendarId = GOOGLE_CALENDAR_ID;
     if (!calendarId) {
         console.error('Google Calendar ID not set');
         return;
