@@ -8,4 +8,20 @@ upload.format = "directory"
 
 [env.production]
 name = "solemare-apartment"
-workers_dev = true 
+workers_dev = true
+compatibility_date = "2024-01-01"
+
+[vars]
+# Google Maps API key for location and maps features
+GOOGLE_MAPS_API_KEY = ""
+
+# Google Calendar ID for availability calendar
+GOOGLE_CALENDAR_ID = ""
+
+# Formspree form ID for contact form
+ENV_FORMSPREE_ID = ""
+
+# OpenWeatherMap API key for weather widget (future use)
+OPENWEATHERMAP_API_KEY = ""
+
+# Add any other environment variables here 

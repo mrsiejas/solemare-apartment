@@ -16,7 +16,8 @@ const translations = {
             location: "Lokalizacja",
             attractions: "Atrakcje i Gastronomia",
             contact: "Kontakt",
-            availability: "Dostępność"
+            availability: "Dostępność",
+            weather: "Pogoda"
         },
         attractions: {
             title: "Atrakcje i Gastronomia",
@@ -33,7 +34,17 @@ const translations = {
             submit: "Wyślij"
         },
         footer: {
-            copyright: "© 2024 Solemare Apartment 46. Wszelkie prawa zastrzeżone."
+            copyright: "© 2025 Solemare Apartment 46. Wszelkie prawa zastrzeżone."
+        },
+        weather: {
+            subtitle: "Aktualna prognoza pogody dla Kątów Rybackich",
+            feelsLike: "Odczuwalna",
+            humidity: "Wilgotność",
+            wind: "Wiatr",
+            forecast: "Prognoza na 5 dni",
+            today: "Dziś",
+            tomorrow: "Jutro",
+            error: "Nie udało się załadować danych pogodowych"
         }
     },
     en: {
@@ -53,7 +64,8 @@ const translations = {
             location: "Location",
             attractions: "Attractions & Dining",
             contact: "Contact",
-            availability: "Availability"
+            availability: "Availability",
+            weather: "Weather"
         },
         attractions: {
             title: "Attractions & Dining",
@@ -70,7 +82,17 @@ const translations = {
             submit: "Send"
         },
         footer: {
-            copyright: "© 2024 Solemare Apartment 46. All rights reserved."
+            copyright: "© 2025 Solemare Apartment 46. All rights reserved."
+        },
+        weather: {
+            subtitle: "Current weather forecast for Kąty Rybackie",
+            feelsLike: "Feels like",
+            humidity: "Humidity",
+            wind: "Wind",
+            forecast: "5-day forecast",
+            today: "Today",
+            tomorrow: "Tomorrow",
+            error: "Unable to load weather data"
         }
     }
 }; 
