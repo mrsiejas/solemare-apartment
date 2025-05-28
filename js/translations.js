@@ -4,6 +4,7 @@ const translations = {
             home: "Strona główna",
             gallery: "Galeria",
             location: "Lokalizacja",
+            attractions: "Atrakcje",
             contact: "Kontakt"
         },
         hero: {
@@ -13,8 +14,17 @@ const translations = {
         sections: {
             gallery: "Galeria",
             location: "Lokalizacja",
+            attractions: "Atrakcje i Gastronomia",
             contact: "Kontakt",
             availability: "Dostępność"
+        },
+        attractions: {
+            title: "Atrakcje i Gastronomia",
+            subtitle: "Odkryj okolicę",
+            restaurants: "Restauracje",
+            attractions: "Atrakcje",
+            beaches: "Plaże",
+            nature: "Przyroda"
         },
         contact: {
             name: "Imię i nazwisko",
@@ -31,6 +41,7 @@ const translations = {
             home: "Home",
             gallery: "Gallery",
             location: "Location",
+            attractions: "Attractions",
             contact: "Contact"
         },
         hero: {
@@ -40,8 +51,17 @@ const translations = {
         sections: {
             gallery: "Gallery",
             location: "Location",
+            attractions: "Attractions & Dining",
             contact: "Contact",
             availability: "Availability"
+        },
+        attractions: {
+            title: "Attractions & Dining",
+            subtitle: "Discover the area",
+            restaurants: "Restaurants",
+            attractions: "Attractions",
+            beaches: "Beaches",
+            nature: "Nature"
         },
         contact: {
             name: "Full Name",
