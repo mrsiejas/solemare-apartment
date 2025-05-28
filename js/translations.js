@@ -8,7 +8,7 @@ const translations = {
             contact: "Kontakt"
         },
         hero: {
-            title: "Apartament Solemare",
+            title: "Solemare Apartament 46",
             subtitle: "Wypoczynek w sercu Kątów Rybackich"
         },
         sections: {
@@ -33,7 +33,7 @@ const translations = {
             submit: "Wyślij"
         },
         footer: {
-            copyright: "© 2024 Solemare Apartment. Wszelkie prawa zastrzeżone."
+            copyright: "© 2024 Solemare Apartment 46. Wszelkie prawa zastrzeżone."
         }
     },
     en: {
@@ -45,7 +45,7 @@ const translations = {
             contact: "Contact"
         },
         hero: {
-            title: "Solemare Apartment",
+            title: "Solemare Apartment 46",
             subtitle: "Relaxation in the heart of Kąty Rybackie"
         },
         sections: {
@@ -70,7 +70,7 @@ const translations = {
             submit: "Send"
         },
         footer: {
-            copyright: "© 2024 Solemare Apartment. All rights reserved."
+            copyright: "© 2024 Solemare Apartment 46. All rights reserved."
         }
     }
 }; 
