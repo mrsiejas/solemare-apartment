@@ -9,9 +9,16 @@ upload.format = "directory"
 [env.production]
 name = "solemare-apartment"
 workers_dev = true
-compatibility_date = "2024-01-01"
+compatibility_date = "2025-05-28"
 
 [vars]
+# IMPORTANT: These are just placeholders. Do not add actual values here.
+# Set the real values in Cloudflare Pages dashboard:
+# 1. Go to your project in Cloudflare Pages
+# 2. Click Settings > Environment variables
+# 3. Add each variable with its actual value
+# 4. Never commit actual API keys or sensitive values to the repository
+
 # Google Maps API key for location and maps features
 GOOGLE_MAPS_API_KEY = ""
 
