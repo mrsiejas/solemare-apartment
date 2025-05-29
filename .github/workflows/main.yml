@@ -3,11 +3,22 @@ name: Quality Check and Deploy
 on:
   push:
     branches:
+      - preview
       - main
-      - '**'  # This will trigger for all branches
   pull_request:
     branches:
       - main
+      - preview
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'preview'
+        type: choice
+        options:
+          - preview
+          - production
 
 jobs:
   quality:
@@ -49,29 +60,38 @@ jobs:
           temporaryPublicStorage: true
           configPath: './lighthouse.config.js'
 
-      # # Performance check
-      # - name: Run Web Vitals
-      #   uses: treosh/lighthouse-ci-action@v10
-      #   with:
-      #     uploadArtifacts: true
-      #     temporaryPublicStorage: true
-      #     configPath: './lighthouse.config.js'
-      #     runs: 3
-      #     budgetPath: './budget.json'
-
-  deploy:
-    needs: quality  # This makes the deploy job wait for the quality job
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'  # Only deploy on main branch pushes
+  deploy-preview:
+    needs: quality
+    if: github.ref == 'refs/heads/preview' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'preview')
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Deploy Preview
     steps:
       - uses: actions/checkout@v4
       
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Pages (Preview)
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: solemare-apartment
           directory: ./
-          wranglerVersion: '3' 
+          wranglerVersion: '3'
+          branch: preview
+
+  deploy-production:
+    needs: quality
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
+    runs-on: ubuntu-latest
+    name: Deploy Production
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy to Cloudflare Pages (Production)
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: solemare-apartment
+          directory: ./
+          wranglerVersion: '3'
+          branch: main 
