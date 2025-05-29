@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          npm install --save-dev html-validate stylelint stylelint-config-standard eslint
+          npm install --save-dev html-validate stylelint stylelint-config-standard eslint eslint-config-standard
 
       # HTML validation
       - name: HTML Validation
@@ -50,7 +50,9 @@ jobs:
 
       # JavaScript linting
       - name: ESLint
-        run: npx eslint "js/*.js"
+        run: |
+          npx eslint "js/*.js" --fix
+          npx eslint "js/*.js"
 
       # Accessibility check
       - name: Run Lighthouse CI
