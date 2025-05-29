@@ -20,39 +20,21 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install --save-dev html-validate stylelint eslint
 
       # HTML validation
       - name: HTML Validation
-        uses: validator/validator-action@v1
-        with:
-          html: '*.html'
+        run: npx html-validate "**/*.html"
 
       # CSS validation
       - name: CSS Validation
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const { execSync } = require('child_process');
-            try {
-              execSync('npx stylelint "**/*.css"', { stdio: 'inherit' });
-            } catch (error) {
-              console.error('CSS validation failed');
-              process.exit(1);
-            }
+        run: npx stylelint "**/*.css"
 
       # JavaScript linting
       - name: ESLint
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const { execSync } = require('child_process');
-            try {
-              execSync('npx eslint "**/*.js"', { stdio: 'inherit' });
-            } catch (error) {
-              console.error('JavaScript linting failed');
-              process.exit(1);
-            }
+        run: npx eslint "**/*.js"
 
       # Security checks
       - name: Run Snyk to check for vulnerabilities
