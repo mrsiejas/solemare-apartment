@@ -1,0 +1,13 @@
+{
+    "extends": [
+        "html-validate:recommended"
+    ],
+    "rules": {
+        "no-implicit-button-type": "error",
+        "empty-heading": "error",
+        "wcag/h30": "error"
+    },
+    "ignore": [
+        "node_modules/**"
+    ]
+}
