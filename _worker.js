@@ -12,9 +12,9 @@ export default {
         let html = await response.text();
 
         // Replace environment variables
-        html = html.replace(/{{GOOGLE_MAPS_API_KEY}}/g, env.GOOGLE_MAPS_API_KEY);
-        html = html.replace(/{{GOOGLE_CALENDAR_ID}}/g, env.GOOGLE_CALENDAR_ID);
-        html = html.replace(/{{ENV_FORMSPREE_ID}}/g, env.ENV_FORMSPREE_ID);
+        html = html.replace(/{{ENV_GOOGLE_MAPS_API_KEY}}/g, env.GOOGLE_MAPS_API_KEY);
+        html = html.replace(/{{ENV_GOOGLE_CALENDAR_ID}}/g, env.GOOGLE_CALENDAR_ID);
+        html = html.replace(/{{ENV_FORMSPREE_ID}}/g, env.FORMSPREE_ID);
 
         // Return the modified HTML
         return new Response(html, {
