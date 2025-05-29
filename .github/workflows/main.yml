@@ -1,0 +1,75 @@
+name: Quality Check and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - '**'  # This will trigger for all branches
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    name: Code Quality & Security
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install --save-dev html-validate stylelint eslint
+
+      # HTML validation
+      - name: HTML Validation
+        run: npx html-validate index.html
+
+      # CSS validation
+      - name: CSS Validation
+        run: npx stylelint "css/*.css"
+
+      # JavaScript linting
+      - name: ESLint
+        run: npx eslint "js/*.js"
+
+      # Accessibility check
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          configPath: './lighthouse.config.js'
+
+      # # Performance check
+      # - name: Run Web Vitals
+      #   uses: treosh/lighthouse-ci-action@v10
+      #   with:
+      #     uploadArtifacts: true
+      #     temporaryPublicStorage: true
+      #     configPath: './lighthouse.config.js'
+      #     runs: 3
+      #     budgetPath: './budget.json'
+
+  deploy:
+    needs: quality  # This makes the deploy job wait for the quality job
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'  # Only deploy on main branch pushes
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: solemare-apartment
+          directory: ./
+          wranglerVersion: '3' 
