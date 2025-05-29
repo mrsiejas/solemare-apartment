@@ -1,7 +1,8 @@
 # Solemare Apartment Website
 
-[![Staging Deployment](https://img.shields.io/endpoint?url=https://cloudflare-pages-badges.solemare-apartment-staging.pages.dev/badge)](https://solemare-apartment-staging.pages.dev)
-[![Production Deployment](https://img.shields.io/endpoint?url=https://cloudflare-pages-badges.solemare-apartment.pages.dev/badge)](https://solemare-apartment.pages.dev)
+[![Deploy to Cloudflare Pages](https://github.com/mrsiejas/solemare-apartment/actions/workflows/deploy.yml/badge.svg)](https://github.com/mrsiejas/solemare-apartment/actions/workflows/deploy.yml)
+[![Staging](https://img.shields.io/badge/staging-solemare--apartment--staging.pages.dev-blue)](https://solemare-apartment-staging.pages.dev)
+[![Production](https://img.shields.io/badge/production-solemare--apartment.pages.dev-green)](https://solemare-apartment.pages.dev)
 
 A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland. Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
 
