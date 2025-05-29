@@ -1,10 +1,12 @@
 # Solemare Apartment Website
 
-[![Preview](https://img.shields.io/badge/preview-solemare--apartment--preview.pages.dev-blue)](https://solemare-apartment-preview.pages.dev)
+[![Preview](https://img.shields.io/badge/preview-solemare--apartment--preview.pages.dev-blue)](https://preview.solemare-apartment.pages.dev)
 [![Production](https://img.shields.io/badge/production-solemare--apartment.pages.dev-green)](https://solemare-apartment.pages.dev)
+
 [![Code Quality](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml/badge.svg)](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml)
 
-A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland. Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
+A modern, responsive website for rental apartment. Can be used as QR code URL  for the guests that have arrived in the apartment. 
+Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
 
 ## Features
 
@@ -15,7 +17,9 @@ A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland
 - 🎨 Modern, responsive design
 - 🖼️ Image gallery
 - 🏖️ Local attractions guide
-- 🌤️ Weather widget (planned)
+- 📅 Google Calendar display showing booked dates with future AI workflow integration (planned)
+- 🌤️ Real-time weather information and forecasts for given location (planned)
+- 🤖 AI Chatbot Assistant powered by HuggingFace; LLM feed with info about the area
 
 ## Tech Stack
 
@@ -42,7 +46,7 @@ A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland
    - Production environment (main branch):
      - `GOOGLE_MAPS_API_KEY`
      - `GOOGLE_CALENDAR_ID`
-     - `ENV_FORMSPREE_ID`
+     - `FORMSPREE_ID`
    - Preview environment (all other branches):
      - Same variables as production
    - `OPENWEATHERMAP_API_KEY` (for future use)
@@ -87,24 +91,4 @@ The project includes automated quality checks that run on every pull request and
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-Copyright (c) 2024 Solemare Apartment 46
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE. 
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details. 
