@@ -17,7 +17,8 @@ const translations = {
             attractions: "Atrakcje i Gastronomia",
             contact: "Kontakt",
             availability: "Dostępność",
-            weather: "Pogoda"
+            weather: "Pogoda",
+            calendar: "Dostępność"
         },
         attractions: {
             title: "Atrakcje i Gastronomia",
@@ -45,6 +46,9 @@ const translations = {
             today: "Dziś",
             tomorrow: "Jutro",
             error: "Nie udało się załadować danych pogodowych"
+        },
+        calendar: {
+            subtitle: "Sprawdź dostępne terminy"
         }
     },
     en: {
@@ -65,7 +69,8 @@ const translations = {
             attractions: "Attractions & Dining",
             contact: "Contact",
             availability: "Availability",
-            weather: "Weather"
+            weather: "Weather",
+            calendar: "Availability"
         },
         attractions: {
             title: "Attractions & Dining",
@@ -93,6 +98,9 @@ const translations = {
             today: "Today",
             tomorrow: "Tomorrow",
             error: "Unable to load weather data"
+        },
+        calendar: {
+            subtitle: "Check available dates"
         }
     }
 }; 

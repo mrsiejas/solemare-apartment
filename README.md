@@ -5,7 +5,8 @@
 
 [![Code Quality](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml/badge.svg)](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml)
 
-A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland. Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
+A modern, responsive website for rental apartment. Can be used as QR code URL  for the guests that have arrived in the apartment. 
+Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
 
 ## Features
 
@@ -16,7 +17,9 @@ A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland
 - 🎨 Modern, responsive design
 - 🖼️ Image gallery
 - 🏖️ Local attractions guide
-- 🌤️ Weather widget (planned)
+- 📅 Google Calendar display showing booked dates with future AI workflow integration (planned)
+- 🌤️ Real-time weather information and forecasts for given location (planned)
+- 🤖 AI Chatbot Assistant powered by HuggingFace; LLM feed with info about the area
 
 ## Tech Stack
 
