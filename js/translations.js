@@ -2,6 +2,7 @@ const translations = {
     pl: {
         nav: {
             home: "Start",
+            calendar: "Dostępność",
             gallery: "Galeria",
             location: "Lokalizacja",
             attractions: "Atrakcje",
@@ -54,6 +55,7 @@ const translations = {
     en: {
         nav: {
             home: "Start",
+            calendar: "Availability",
             gallery: "Gallery",
             location: "Location",
             attractions: "Attractions",
