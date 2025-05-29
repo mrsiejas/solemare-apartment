@@ -135,6 +135,15 @@ section h2 {
     overflow: hidden;
     width: 100%;
     border: 0;
+    display: block;
+}
+
+/* Location section specific styles */
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
 }
 
 /* Contact Form */

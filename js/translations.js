@@ -1,7 +1,7 @@
 const translations = {
     pl: {
         nav: {
-            home: "Strona główna",
+            home: "Start",
             gallery: "Galeria",
             location: "Lokalizacja",
             attractions: "Atrakcje",
@@ -49,7 +49,7 @@ const translations = {
     },
     en: {
         nav: {
-            home: "Home",
+            home: "Start",
             gallery: "Gallery",
             location: "Location",
             attractions: "Attractions",
