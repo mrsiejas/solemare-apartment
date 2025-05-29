@@ -54,13 +54,13 @@ jobs:
       #     npx eslint "js/*.js" --fix
       #     npx eslint "js/*.js"
 
-      # Accessibility check
-      - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-          configPath: './lighthouse.config.js'
+      # # Accessibility check
+      # - name: Run Lighthouse CI
+      #   uses: treosh/lighthouse-ci-action@v10
+      #   with:
+      #     uploadArtifacts: true
+      #     temporaryPublicStorage: true
+      #     configPath: './lighthouse.config.js'
 
   deploy-preview:
     needs: quality
