@@ -1,6 +1,6 @@
 # Solemare Apartment Website
 
-[![Preview](https://img.shields.io/badge/preview-solemare--apartment--preview.pages.dev-blue)](https://solemare-apartment-preview.pages.dev)
+[![Preview](https://img.shields.io/badge/preview-solemare--apartment--preview.pages.dev-blue)](https://preview.solemare-apartment.pages.dev)
 [![Production](https://img.shields.io/badge/production-solemare--apartment.pages.dev-green)](https://solemare-apartment.pages.dev)
 [![Code Quality](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml/badge.svg)](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml)
 
