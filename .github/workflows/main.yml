@@ -33,7 +33,9 @@ jobs:
 
       # CSS validation
       - name: CSS Validation
-        run: npx stylelint "css/*.css"
+        run: |
+          npx stylelint "css/*.css" --fix
+          npx stylelint "css/*.css"
 
       # JavaScript linting
       - name: ESLint
