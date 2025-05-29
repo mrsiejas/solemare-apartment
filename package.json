@@ -1,7 +1,10 @@
 {
   "devDependencies": {
-    "eslint": "^9.27.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "html-validate": "^9.5.5",
     "lighthouse": "^12.6.0",
-    "stylelint": "^16.19.1"
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard": "^38.0.0"
   }
 }

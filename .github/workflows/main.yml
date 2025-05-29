@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          npm install --save-dev html-validate stylelint stylelint-config-standard eslint eslint-config-standard
+          npm install --save-dev --legacy-peer-deps html-validate stylelint stylelint-config-standard eslint@8.56.0 eslint-config-standard@17.1.0
 
       # HTML validation
       - name: HTML Validation
