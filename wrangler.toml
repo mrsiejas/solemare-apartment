@@ -33,7 +33,7 @@ GOOGLE_MAPS_API_KEY = ""
 GOOGLE_CALENDAR_ID = ""
 
 # Formspree form ID for contact form
-ENV_FORMSPREE_ID = ""
+FORMSPREE_ID = ""
 
 # OpenWeatherMap API key for weather widget (future use)
 OPENWEATHERMAP_API_KEY = ""

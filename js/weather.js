@@ -1,5 +1,5 @@
 // Weather API configuration
-const WEATHER_API_KEY = ENV_OPENWEATHERMAP_API_KEY;
+const WEATHER_API_KEY = OPENWEATHERMAP_API_KEY;
 const KATY_RYBACKIE_COORDS = {
     lat: 54.3355,
     lon: 19.2550

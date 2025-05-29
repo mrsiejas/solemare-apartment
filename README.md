@@ -46,7 +46,7 @@ Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
    - Production environment (main branch):
      - `GOOGLE_MAPS_API_KEY`
      - `GOOGLE_CALENDAR_ID`
-     - `ENV_FORMSPREE_ID`
+     - `FORMSPREE_ID`
    - Preview environment (all other branches):
      - Same variables as production
    - `OPENWEATHERMAP_API_KEY` (for future use)
