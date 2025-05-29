@@ -66,9 +66,14 @@ jobs:
     needs: quality
     if: github.ref == 'refs/heads/preview' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'preview')
     runs-on: ubuntu-latest
+    environment: preview
     name: Deploy Preview
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Check Secret
+        run: |
+          echo "TEST_ENV_VAR is set: ${{ secrets.TEST_ENV_VAR != '' }}"
       
       - name: Deploy to Cloudflare Pages (Preview)
         uses: cloudflare/pages-action@v1
@@ -84,9 +89,14 @@ jobs:
     needs: quality
     if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
     runs-on: ubuntu-latest
+    environment: production
     name: Deploy Production
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Check Secret
+        run: |
+          echo "TEST_ENV_VAR is set: ${{ secrets.TEST_ENV_VAR != '' }}"
       
       - name: Deploy to Cloudflare Pages (Production)
         uses: cloudflare/pages-action@v1
