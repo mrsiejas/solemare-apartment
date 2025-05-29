@@ -27,13 +27,13 @@ compatibility_date = "2025-05-28"
 # 4. Never commit actual API keys or sensitive values to the repository
 
 # Google Maps API key for location and maps features
-GOOGLE_MAPS_API_KEY = ""
+ENV_GOOGLE_MAPS_API_KEY = ""
 
 # Google Calendar ID for availability calendar
-GOOGLE_CALENDAR_ID = ""
+ENV_GOOGLE_CALENDAR_ID = ""
 
 # Formspree form ID for contact form
-FORMSPREE_ID = ""
+ENV_FORMSPREE_ID = ""
 
 # OpenWeatherMap API key for weather widget (future use)
 OPENWEATHERMAP_API_KEY = ""

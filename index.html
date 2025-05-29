@@ -71,7 +71,8 @@
             <h2 data-translate="sections.calendar">Dostępność</h2>
             <p class="section-subtitle" data-translate="calendar.subtitle">Sprawdź dostępne terminy</p>
             <div class="calendar-container">
-                <iframe src="https://calendar.google.com/calendar/embed?src={{GOOGLE_CALENDAR_ID}}&ctz=Europe%2FWarsaw"
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?src={{ENV_GOOGLE_CALENDAR_ID}}&ctz=Europe%2FWarsaw"
                     class="calendar-iframe" title="Kalendarz dostępności Apartamenty Solemare">
                 </iframe>
             </div>
@@ -142,7 +143,7 @@
 
         <section id="contact" class="contact">
             <h2 data-translate="sections.contact">Kontakt</h2>
-            <form id="contact-form" action="https://formspree.io/f/{{FORMSPREE_ID}}" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/{{ENV_FORMSPREE_ID}}" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" required data-translate-placeholder="contact.name"
                         placeholder="Imię i nazwisko">
