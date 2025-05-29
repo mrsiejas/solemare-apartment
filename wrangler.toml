@@ -6,15 +6,15 @@ entry-point = "."
 command = ""
 upload.format = "directory"
 
-# Staging environment (preview)
-[env.staging]
-name = "solemare-apartment-staging"
+# Production environment (main branch)
+[env.production]
+name = "solemare-apartment"
 workers_dev = true
 compatibility_date = "2025-05-28"
 
-# Production environment
-[env.production]
-name = "solemare-apartment"
+# Preview environment (all other branches)
+[env.preview]
+name = "solemare-apartment-preview"
 workers_dev = true
 compatibility_date = "2025-05-28"
 
@@ -23,7 +23,7 @@ compatibility_date = "2025-05-28"
 # Set the real values in Cloudflare Pages dashboard for each environment:
 # 1. Go to your project in Cloudflare Pages
 # 2. Click Settings > Environment variables
-# 3. Add each variable with its actual value for both staging and production
+# 3. Add each variable with its actual value for both production and preview
 # 4. Never commit actual API keys or sensitive values to the repository
 
 # Google Maps API key for location and maps features

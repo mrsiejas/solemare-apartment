@@ -1,0 +1,81 @@
+name: Code Quality & Security
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    name: Code Quality & Security
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      # HTML validation
+      - name: HTML Validation
+        uses: validator/validator-action@v1
+        with:
+          html: '*.html'
+
+      # CSS validation
+      - name: CSS Validation
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            try {
+              execSync('npx stylelint "**/*.css"', { stdio: 'inherit' });
+            } catch (error) {
+              console.error('CSS validation failed');
+              process.exit(1);
+            }
+
+      # JavaScript linting
+      - name: ESLint
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            try {
+              execSync('npx eslint "**/*.js"', { stdio: 'inherit' });
+            } catch (error) {
+              console.error('JavaScript linting failed');
+              process.exit(1);
+            }
+
+      # Security checks
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+
+      # Accessibility check
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          configPath: './lighthouse.config.js'
+
+      # Performance check
+      - name: Run Web Vitals
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          configPath: './lighthouse.config.js'
+          runs: 3
+          budgetPath: './budget.json' 

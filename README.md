@@ -1,8 +1,8 @@
 # Solemare Apartment Website
 
-[![Deploy to Cloudflare Pages](https://github.com/mrsiejas/solemare-apartment/actions/workflows/deploy.yml/badge.svg)](https://github.com/mrsiejas/solemare-apartment/actions/workflows/deploy.yml)
-[![Staging](https://img.shields.io/badge/staging-solemare--apartment--staging.pages.dev-blue)](https://solemare-apartment-staging.pages.dev)
+[![Preview](https://img.shields.io/badge/preview-solemare--apartment--preview.pages.dev-blue)](https://solemare-apartment-preview.pages.dev)
 [![Production](https://img.shields.io/badge/production-solemare--apartment.pages.dev-green)](https://solemare-apartment.pages.dev)
+[![Code Quality](https://github.com/mrsiejas/solemare-apartment/actions/workflows/code-quality.yml/badge.svg)](https://github.com/mrsiejas/solemare-apartment/actions/workflows/code-quality.yml)
 
 A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland. Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
 
@@ -20,7 +20,14 @@ A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland
 ## Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript
-- **Deployment**: Cloudflare Pages
+- **Deployment**: Cloudflare Pages (automatic deployments)
+- **Quality Assurance**:
+  - HTML validation
+  - CSS linting
+  - JavaScript linting
+  - Security scanning (Snyk)
+  - Performance monitoring (Lighthouse)
+  - Accessibility testing
 - **APIs**: 
   - Google Maps
   - Google Calendar
@@ -32,18 +39,43 @@ A modern, responsive website for Solemare Apartment 46 in Kąty Rybackie, Poland
 
 1. Clone the repository
 2. Set up environment variables in Cloudflare Pages:
-   - `GOOGLE_MAPS_API_KEY`
-   - `GOOGLE_CALENDAR_ID`
-   - `ENV_FORMSPREE_ID`
+   - Production environment (main branch):
+     - `GOOGLE_MAPS_API_KEY`
+     - `GOOGLE_CALENDAR_ID`
+     - `ENV_FORMSPREE_ID`
+   - Preview environment (all other branches):
+     - Same variables as production
    - `OPENWEATHERMAP_API_KEY` (for future use)
-
-3. Deploy to Cloudflare Pages
 
 ## Development
 
 - Run locally using a static server
-- Use Cloudflare Pages for preview deployments
+- Push to any branch for automatic preview deployment
+- Push to main branch for automatic production deployment
+- Code quality checks run automatically on pull requests and main branch pushes
 - Follow the TODO.md for planned features
+
+## Quality Assurance
+
+The project includes automated quality checks that run on every pull request and push to main:
+
+- **Code Quality**:
+  - HTML validation
+  - CSS linting with Stylelint
+  - JavaScript linting with ESLint
+
+- **Security**:
+  - Vulnerability scanning with Snyk
+  - Dependency updates monitoring
+
+- **Performance**:
+  - Lighthouse CI for performance metrics
+  - Web Vitals monitoring
+  - Performance budget enforcement
+
+- **Accessibility**:
+  - Automated accessibility testing
+  - WCAG compliance checking
 
 ## Contributing
 

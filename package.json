@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "lighthouse": "^12.6.0",
+    "stylelint": "^16.19.1"
+  }
+}

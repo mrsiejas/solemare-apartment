@@ -1,0 +1,18 @@
+[
+    {
+        "resourceType": "script",
+        "budget": 125
+    },
+    {
+        "resourceType": "total",
+        "budget": 300
+    },
+    {
+        "resourceType": "third-party",
+        "budget": 50
+    },
+    {
+        "resourceType": "image",
+        "budget": 100
+    }
+]
