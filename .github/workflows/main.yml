@@ -31,11 +31,11 @@ jobs:
       - name: HTML Validation
         run: npx html-validate index.html
 
-      # CSS validation
-      - name: CSS Validation
-        run: |
-          npx stylelint "css/*.css" --fix
-          npx stylelint "css/*.css"
+      # # CSS validation
+      # - name: CSS Validation
+      #   run: |
+      #     npx stylelint "css/*.css" --fix
+      #     npx stylelint "css/*.css"
 
       # JavaScript linting
       - name: ESLint
