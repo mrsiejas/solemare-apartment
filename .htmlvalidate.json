@@ -7,7 +7,7 @@
         "empty-heading": "error",
         "wcag/h30": "error"
     },
-    "ignore": [
-        "node_modules/**"
-    ]
+    "transform": {
+        "^node_modules/.*": "ignore"
+    }
 }
