@@ -34,8 +34,8 @@ const Location = () => {
             </div>
 
             <p className="text-gray-700 mb-4">
-              ul. Rybacka 46<br />
-              82-103 Kąty Rybackie<br />
+              ul. Polna 3a<br />
+              82-110 Kąty Rybackie<br />
               Poland
             </p>
 

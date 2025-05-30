@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Info } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n';
 
 const Availability = () => {
+  const t = useTranslation();
+
   return (
     <section id="availability" className="py-16">
       <motion.div
@@ -12,9 +15,9 @@ const Availability = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">Check Availability</h2>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('availability.title')}</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          View our calendar to check availability for your desired dates.
+          {t('availability.subtitle')}
         </p>
       </motion.div>
 
@@ -27,7 +30,7 @@ const Availability = () => {
       >
         <div className="flex items-center gap-2 mb-4 text-primary">
           <Calendar size={24} />
-          <h3 className="text-xl font-semibold">Availability Calendar</h3>
+          <h3 className="text-xl font-semibold">{t('availability.calendarTitle')}</h3>
         </div>
 
         <div className="calendar-container">
@@ -55,14 +58,14 @@ const Availability = () => {
             <Info size={24} />
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Booking Information</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('availability.bookingInfo.title')}</h3>
             <ul className="space-y-2 text-gray-700">
-              <li>• Minimum stay: 3 nights</li>
-              <li>• Check-in time: 3:00 PM</li>
-              <li>• Check-out time: 11:00 AM</li>
-              <li>• 50% deposit required to secure booking</li>
-              <li>• Full payment due 30 days before arrival</li>
-              <li>• Cancellation policy: Full refund if cancelled 30 days before arrival</li>
+              <li>• {t('availability.bookingInfo.minStay')}</li>
+              <li>• {t('availability.bookingInfo.checkIn')}</li>
+              <li>• {t('availability.bookingInfo.checkOut')}</li>
+              <li>• {t('availability.bookingInfo.deposit')}</li>
+              <li>• {t('availability.bookingInfo.payment')}</li>
+              <li>• {t('availability.bookingInfo.cancellation')}</li>
             </ul>
           </div>
         </div>

@@ -53,7 +53,6 @@ const Navbar = () => {
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-              <NavLink onClick={() => scrollToSection('apartment')}>{t('nav.apartment')}</NavLink>
               <NavLink onClick={() => scrollToSection('amenities')}>{t('nav.amenities')}</NavLink>
               <NavLink onClick={() => scrollToSection('gallery')}>{t('nav.gallery')}</NavLink>
               <NavLink onClick={() => scrollToSection('availability')}>{t('nav.availability')}</NavLink>
@@ -126,7 +125,6 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <MobileNavLink onClick={() => scrollToSection('apartment')}>{t('nav.apartment')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('amenities')}>{t('nav.amenities')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('gallery')}>{t('nav.gallery')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('availability')}>{t('nav.availability')}</MobileNavLink>

@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n';
 
 const Hero = () => {
+  const t = useTranslation();
+
   const scrollToApartment = () => {
     const element = document.getElementById('apartment');
     if (element) {
@@ -33,7 +36,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Your Perfect Coastal Getaway
+            {t('hero.title')}
           </motion.h1>
 
           <motion.p
@@ -42,7 +45,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Experience luxury living with breathtaking ocean views and modern amenities
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.div
@@ -61,7 +64,7 @@ const Hero = () => {
                 }
               }}
             >
-              Book Now
+              {t('nav.book')}
             </Button>
 
             <Button
@@ -75,7 +78,7 @@ const Hero = () => {
                 }
               }}
             >
-              Check Availability
+              {t('hero.cta')}
             </Button>
           </motion.div>
         </motion.div>
