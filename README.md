@@ -5,8 +5,8 @@
 
 [![Code Quality](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml/badge.svg)](https://github.com/mrsiejas/solemare-apartment/actions/workflows/main.yml)
 
-A modern, responsive website for rental apartment. Can be used as QR code URL  for the guests that have arrived in the apartment. 
-Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
+A modern, responsive website for rental apartment. Can be used as QR code URL for the guests that have arrived in the apartment. 
+Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
 
 ## Features
 
@@ -14,7 +14,7 @@ Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
 - 📍 Google Maps integration
 - 📅 Google Calendar availability
 - 📝 Contact form with Formspree
-- 🎨 Modern, responsive design
+- 🎨 Modern, responsive design with Tailwind CSS
 - 🖼️ Image gallery
 - 🏖️ Local attractions guide
 - 📅 Google Calendar display showing booked dates with future AI workflow integration (planned)
@@ -23,12 +23,16 @@ Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
 
 ## Tech Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript
+- **Frontend**: 
+  - React 18
+  - Vite
+  - Tailwind CSS
+  - JavaScript (ES6+)
 - **Deployment**: Cloudflare Pages (automatic deployments)
 - **Quality Assurance**:
   - HTML validation
-  - CSS linting
-  - JavaScript linting
+  - CSS linting (Stylelint)
+  - JavaScript linting (ESLint)
   - Security scanning (Snyk)
   - Performance monitoring (Lighthouse)
   - Accessibility testing
@@ -39,10 +43,33 @@ Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
   - OpenWeatherMap (planned)
 - **Version Control**: Git/GitHub
 
+## Project Structure
+
+```
+solemare-apartment/
+├── src/                    # Source files
+│   ├── components/        # React components
+│   ├── lib/              # Utility functions and libraries
+│   ├── App.jsx           # Main application component
+│   ├── main.jsx          # Application entry point
+│   └── index.css         # Global styles
+├── public/               # Static assets
+├── dist/                # Build output
+└── configuration files  # Various config files
+```
+
 ## Getting Started
 
 1. Clone the repository
-2. Set up environment variables in Cloudflare Pages:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start development server:
+   ```bash
+   npm run dev
+   ```
+4. Set up environment variables in Cloudflare Pages:
    - Production environment (main branch):
      - `GOOGLE_MAPS_API_KEY`
      - `GOOGLE_CALENDAR_ID`
@@ -53,11 +80,11 @@ Built with HTML, CSS, and JavaScript, deployed on Cloudflare Pages.
 
 ## Development
 
-- Run locally using a static server
+- Run locally using `npm run dev`
+- Build for production using `npm run build`
 - Push to any branch for automatic preview deployment
 - Push to main branch for automatic production deployment
 - Code quality checks run automatically on pull requests and main branch pushes
-- Follow the TODO.md for planned features
 
 ## Quality Assurance
 
