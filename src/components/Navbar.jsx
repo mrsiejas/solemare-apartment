@@ -39,9 +39,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <motion.div
-            className="flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <img
               src="/images/sunset_icon.png"
@@ -49,7 +49,7 @@ const Navbar = () => {
               className="w-8 h-8"
             />
             <span className="font-bold text-xl text-black">Solemare Apartament 46</span>
-          </motion.div>
+          </div>
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
@@ -187,7 +187,6 @@ const NavLink = ({ children, onClick }) => (
   <motion.button
     className="text-gray-800 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
     onClick={onClick}
-    whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
   >
     {children}

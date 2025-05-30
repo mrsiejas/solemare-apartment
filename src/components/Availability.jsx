@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Info } from 'lucide-react';
@@ -18,7 +17,7 @@ const Availability = () => {
           View our calendar to check availability for your desired dates.
         </p>
       </motion.div>
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,15 +29,20 @@ const Availability = () => {
           <Calendar size={24} />
           <h3 className="text-xl font-semibold">Availability Calendar</h3>
         </div>
-        
+
         <div className="calendar-container">
-          <iframe 
-            src="https://calendar.google.com/calendar/embed?src=c_3rif2iekn8tqu2ced1rnjt93e4%40group.calendar.google.com&ctz=America%2FNew_York" 
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=707af2fa11decccd6ba8415cd339e8ad33c32b03a37462b4e50ad02db48a7977%40group.calendar.google.com&ctz=Europe%2FWarsaw"
+            style={{ border: 0 }}
+            width="800"
+            height="600"
+            frameBorder="0"
+            scrolling="no"
             title="Apartment Availability Calendar"
           ></iframe>
         </div>
       </motion.div>
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
