@@ -1,19 +1,13 @@
 # Cloudflare Pages configuration
-pages_build_output_dir = "dist"
-pages_build_command = "npm install && npm run build"
-
-# Production environment (main branch)
-[env.production]
 name = "solemare-apartment"
-workers_dev = true
 compatibility_date = "2025-05-28"
 
-# Preview environment (all other branches)
-[env.preview]
-name = "solemare-apartment-preview"
-workers_dev = true
-compatibility_date = "2025-05-28"
+# Build configuration
+[build]
+command = "npm install && npm run build"
+output_dir = "dist"
 
+# Environment variables
 [vars]
 # IMPORTANT: These are just placeholders. Do not add actual values here.
 # Set the real values in Cloudflare Pages dashboard for each environment:
@@ -23,13 +17,13 @@ compatibility_date = "2025-05-28"
 # 4. Never commit actual API keys or sensitive values to the repository
 
 # Google Maps API key for location and maps features
-VITE_GOOGLE_MAPS_API_KEY = ""
+GOOGLE_MAPS_API_KEY = ""
 
 # Google Calendar ID for availability calendar
-VITE_GOOGLE_CALENDAR_ID = ""
+GOOGLE_CALENDAR_ID = ""
 
 # Formspree form ID for contact form
-VITE_FORMSPREE_ID = ""
+FORMSPREE_ID = ""
 
 # OpenWeatherMap API key for weather widget (future use)
 OPENWEATHERMAP_API_KEY = ""
