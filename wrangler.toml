@@ -1,31 +1,12 @@
-# Cloudflare Pages configuration
 name = "solemare-apartment"
-compatibility_date = "2025-05-28"
+pages_build_output_dir = "./dist"
 
-# Build configuration
 [build]
 command = "npm install && npm run build"
 output_dir = "dist"
 
-# Environment variables
 [vars]
-# IMPORTANT: These are just placeholders. Do not add actual values here.
-# Set the real values in Cloudflare Pages dashboard for each environment:
-# 1. Go to your project in Cloudflare Pages
-# 2. Click Settings > Environment variables
-# 3. Add each variable with its actual value for both production and preview
-# 4. Never commit actual API keys or sensitive values to the repository
-
-# Google Maps API key for location and maps features
 GOOGLE_MAPS_API_KEY = ""
-
-# Google Calendar ID for availability calendar
 GOOGLE_CALENDAR_ID = ""
-
-# Formspree form ID for contact form
 FORMSPREE_ID = ""
-
-# OpenWeatherMap API key for weather widget (future use)
 OPENWEATHERMAP_API_KEY = ""
-
-# Add any other environment variables here 
