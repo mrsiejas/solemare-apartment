@@ -18,3 +18,16 @@ yarn-error.log*
 # OS
 .DS_Store
 Thumbs.db
+
+# Build output
+dist/
+build/
+out/
+.next/
+
+# Coverage
+coverage/
+
+# Cache
+.cache/
+.temp/
