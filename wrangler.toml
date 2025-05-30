@@ -1,9 +1,9 @@
 [site]
-bucket = "./"
+bucket = "./dist"
 entry-point = "."
 
 [build]
-command = ""
+command = "npm run build"
 upload.format = "directory"
 
 # Production environment (main branch)
@@ -27,13 +27,13 @@ compatibility_date = "2025-05-28"
 # 4. Never commit actual API keys or sensitive values to the repository
 
 # Google Maps API key for location and maps features
-ENV_GOOGLE_MAPS_API_KEY = ""
+VITE_GOOGLE_MAPS_API_KEY = ""
 
 # Google Calendar ID for availability calendar
-ENV_GOOGLE_CALENDAR_ID = ""
+VITE_GOOGLE_CALENDAR_ID = ""
 
 # Formspree form ID for contact form
-ENV_FORMSPREE_ID = ""
+VITE_FORMSPREE_ID = ""
 
 # OpenWeatherMap API key for weather widget (future use)
 OPENWEATHERMAP_API_KEY = ""
