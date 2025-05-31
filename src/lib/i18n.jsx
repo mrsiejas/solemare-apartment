@@ -64,7 +64,15 @@ const translations = {
         },
         location: {
             title: 'Lokalizacja',
-            subtitle: 'Idealnie usytuowany w sercu miasta'
+            subtitle: 'Idealnie usytuowany w sercu Kątów Rybackich',
+            description: 'Nasz apartament znajduje się w samym sercu Kątów Rybackich, zapewniając łatwy dostęp do plaży i lokalnych atrakcji.',
+            distances: {
+                beach: '2 minuty spacerem do plaży',
+                restaurants: '5 minut do restauracji i sklepów',
+                reserve: '10 minut do rezerwatu kormoranów',
+                krynica: '15 minut do Krynicy Morskiej'
+            },
+            getDirections: 'Pokaż trasę'
         },
         attractions: {
             title: 'Atrakcje i Jedzenie',
@@ -217,7 +225,15 @@ const translations = {
         },
         location: {
             title: 'Location',
-            subtitle: 'Perfectly situated in the heart of the city'
+            subtitle: 'Perfectly situated in the heart of Kąty Rybackie',
+            description: 'Our apartment is perfectly situated in the heart of Kąty Rybackie, giving you easy access to the beach and local attractions.',
+            distances: {
+                beach: '2 minutes walk to the beach',
+                restaurants: '5 minutes to restaurants and shops',
+                reserve: '10 minutes to the Cormorant Reserve',
+                krynica: '15 minutes to Krynica Morska'
+            },
+            getDirections: 'Get Directions'
         },
         attractions: {
             title: 'Attractions & Food',
