@@ -54,11 +54,11 @@ const App = () => {
 
             <div className="section-divider" />
 
-            <Location />
+            <LocalAttractions />
 
             <div className="section-divider" />
 
-            <LocalAttractions />
+            <Location />
 
             <div className="section-divider" />
 

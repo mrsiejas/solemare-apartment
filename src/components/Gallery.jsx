@@ -1,42 +1,49 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/lib/i18n';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const t = useTranslation();
 
   const images = [
     {
       id: 1,
-      alt: "Modern apartment living room with ocean view",
-      description: "Spacious living room with comfortable seating and panoramic ocean views"
+      alt: "Apartament Solemare 46 - Sypialnia",
+      description: "Sypialnia z łóżkiem 2 osobowym",
+      src: "/images/gallery/IMG-20250419-WA0028.jpg"
     },
     {
       id: 2,
-      alt: "Luxury bedroom with king size bed",
-      description: "Master bedroom with king-size bed, premium linens, and direct balcony access"
+      alt: "Apartament Solemare 46 - Łazienka",
+      description: "Łazienka z prysznicem i deszczownicą",
+      src: "/images/gallery/IMG-20250419-WA0032.jpg"
     },
     {
       id: 3,
-      alt: "Modern kitchen with stainless steel appliances",
-      description: "Fully equipped gourmet kitchen with high-end appliances and breakfast bar"
+      alt: "Apartament Solemare 46 - Łazienka",
+      description: "Łazienka",
+      src: "/images/gallery/IMG-20250419-WA0033.jpg"
     },
     {
       id: 4,
-      alt: "Elegant bathroom with walk-in shower",
-      description: "Spa-like bathroom featuring a walk-in rainfall shower and luxury fixtures"
+      alt: "Solemare Apartament 46 - Kuchnia",
+      description: "W  pełni wyposażona kuchnia: średnia lodówka, zmywarka, mikrofalówka i płyta indukcyjna",
+      src: "/images/gallery/IMG-20250419-WA0036.jpg"
     },
     {
       id: 5,
-      alt: "Private balcony with ocean view",
-      description: "Private balcony with comfortable seating perfect for enjoying sunset views"
+      alt: "Solemare Apartament 46 - Korytarz",
+      description: "Wejście do mieszkania i korytarz",
+      src: "/images/gallery/IMG-20250419-WA0039.jpg"
     },
     {
       id: 6,
-      alt: "Dining area with ocean view",
-      description: "Elegant dining area with seating for six and stunning ocean views"
+      alt: "Solemare Apartament 46 - Duży pokój",
+      description: "Przestronny duży pokój z rozkładanym narożnikiem 2 osobowym",
+      src: "/images/gallery/IMG-20250419-WA0047.jpg"
     }
   ];
 
@@ -83,13 +90,13 @@ const Gallery = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">Apartment Gallery</h2>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('gallery.title')}</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Take a visual tour of our beautiful apartment and imagine your perfect stay.
+          {t('gallery.subtitle')}
         </p>
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         variants={containerVariants}
         initial="hidden"
@@ -104,14 +111,15 @@ const Gallery = () => {
             whileHover={{ scale: 1.03 }}
             onClick={() => openLightbox(index)}
           >
-            <img  
-              alt={image.alt} 
+            <img
+              alt={image.alt}
               className="w-full h-64 object-cover"
-             src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+              src={image.src}
+            />
           </motion.div>
         ))}
       </motion.div>
-      
+
       {/* Lightbox */}
       <AnimatePresence>
         {selectedImage !== null && (
@@ -119,34 +127,35 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
             onClick={closeLightbox}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-4xl w-full"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative max-w-4xl w-full mx-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="absolute top-2 right-2 text-white z-10 bg-black/50 hover:bg-black/70"
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 text-white hover:bg-white/20"
                 onClick={closeLightbox}
               >
                 <X size={24} />
               </Button>
-              
+
               <div className="relative">
-                <img  
-                  alt={images[selectedImage].alt} 
+                <img
+                  alt={images[selectedImage].alt}
                   className="w-full h-auto max-h-[80vh] object-contain"
-                 src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
-                
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
+                  src={images[selectedImage].src}
+                />
+
+                <Button
+                  variant="ghost"
+                  size="icon"
                   className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black/70"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -156,10 +165,10 @@ const Gallery = () => {
                 >
                   <ChevronLeft size={24} />
                 </Button>
-                
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
+
+                <Button
+                  variant="ghost"
+                  size="icon"
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black/70"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -170,8 +179,8 @@ const Gallery = () => {
                   <ChevronRight size={24} />
                 </Button>
               </div>
-              
-              <p className="text-white text-center mt-4">{images[selectedImage].alt}</p>
+
+              <p className="text-white text-center mt-4">{images[selectedImage].description}</p>
             </motion.div>
           </motion.div>
         )}

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palmtree, UtensilsCrossed, ShoppingBag, Ticket } from 'lucide-react';
+import { Palmtree, UtensilsCrossed, Ticket } from 'lucide-react';
 
 const LocalAttractions = () => {
   const attractions = [
@@ -44,27 +43,6 @@ const LocalAttractions = () => {
           name: "Beachside Taco Shack",
           description: "Casual spot for authentic Mexican street food and refreshing margaritas.",
           distance: "7 min walk"
-        }
-      ]
-    },
-    {
-      category: "Shopping",
-      icon: <ShoppingBag size={24} />,
-      items: [
-        {
-          name: "Lincoln Road Mall",
-          description: "Pedestrian-only promenade with a variety of shops, boutiques, and outdoor cafes.",
-          distance: "15 min walk"
-        },
-        {
-          name: "Bal Harbour Shops",
-          description: "Luxury shopping center featuring high-end designer stores and fine dining.",
-          distance: "20 min drive"
-        },
-        {
-          name: "Sunset Harbour Shops",
-          description: "Trendy shopping district with local boutiques, fitness studios, and gourmet markets.",
-          distance: "12 min walk"
         }
       ]
     },
@@ -124,7 +102,7 @@ const LocalAttractions = () => {
           Discover the best beaches, restaurants, shopping, and entertainment options near our apartment.
         </p>
       </motion.div>
-      
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -138,7 +116,7 @@ const LocalAttractions = () => {
               <div className="text-primary">{category.icon}</div>
               <h3 className="text-2xl font-bold text-gray-800">{category.category}</h3>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {category.items.map((item, itemIndex) => (
                 <motion.div

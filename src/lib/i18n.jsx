@@ -13,7 +13,7 @@ const translations = {
             book: 'Rezerwuj'
         },
         hero: {
-            title: 'Apartament Solemare 46',
+            title: 'Solemare Apartament 46',
             subtitle: 'Wypoczynek w sercu Kątów Rybackich',
             cta: 'Sprawdź dostępność'
         },
@@ -22,7 +22,7 @@ const translations = {
             description: 'Witaj w naszym luksusowym apartamencie z widokiem na morze, gdzie komfort spotyka się z elegancją. Idealnie usytuowany z zapierającym dech w piersiach widokiem na ocean, nasz nowoczesny apartament oferuje idealne połączenie relaksu i wygody dla Twojego wymarzonego wypoczynku.',
             features: {
                 guests: 'Goście',
-                bedrooms: 'Sypialnie',
+                beds: 'Łóżka',
                 bathrooms: 'Łazienki',
                 size: 'Powierzchnia'
             }
@@ -101,7 +101,7 @@ const translations = {
             description: 'Welcome to our luxurious beachfront apartment, where comfort meets elegance. Perfectly situated with stunning ocean views, our modern apartment offers the ideal blend of relaxation and convenience for your perfect getaway.',
             features: {
                 guests: 'Guests',
-                bedrooms: 'Bedrooms',
+                beds: 'Beds',
                 bathrooms: 'Bathrooms',
                 size: 'Size'
             }

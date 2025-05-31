@@ -28,20 +28,14 @@ const Availability = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="bg-white rounded-lg shadow-lg p-6 mb-8"
       >
-        <div className="flex items-center gap-2 mb-4 text-primary">
-          <Calendar size={24} />
-          <h3 className="text-xl font-semibold">{t('availability.calendarTitle')}</h3>
-        </div>
-
         <div className="calendar-container">
           <iframe
             src="https://calendar.google.com/calendar/embed?src=707af2fa11decccd6ba8415cd339e8ad33c32b03a37462b4e50ad02db48a7977%40group.calendar.google.com&ctz=Europe%2FWarsaw"
-            style={{ border: 0 }}
+            style={{ border: 0, border: 'none' }}
             width="800"
             height="600"
-            frameBorder="0"
-            scrolling="no"
-            title="Apartment Availability Calendar"
+            className="overflow-hidden"
+            title="Availability Calendar"
           ></iframe>
         </div>
       </motion.div>
