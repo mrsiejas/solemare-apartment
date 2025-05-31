@@ -55,19 +55,6 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg"
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              {t('nav.book')}
-            </Button>
-
-            <Button
               variant="outline"
               size="lg"
               className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/30 px-8 py-6 text-lg"

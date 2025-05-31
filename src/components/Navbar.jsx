@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation, useLanguage } from '@/lib/i18n.jsx';
 
@@ -58,7 +58,6 @@ const Navbar = () => {
               <NavLink onClick={() => scrollToSection('availability')}>{t('nav.availability')}</NavLink>
               <NavLink onClick={() => scrollToSection('location')}>{t('nav.location')}</NavLink>
               <NavLink onClick={() => scrollToSection('attractions')}>{t('nav.attractions')}</NavLink>
-              <NavLink onClick={() => scrollToSection('contact')}>{t('nav.contact')}</NavLink>
             </div>
           </div>
 
@@ -99,7 +98,7 @@ const Navbar = () => {
                 }
               }}
             >
-              <Phone size={16} />
+              <Send size={16} />
               <span>{t('nav.book')}</span>
             </Button>
           </div>
@@ -130,7 +129,6 @@ const Navbar = () => {
             <MobileNavLink onClick={() => scrollToSection('availability')}>{t('nav.availability')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('location')}>{t('nav.location')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('attractions')}>{t('nav.attractions')}</MobileNavLink>
-            <MobileNavLink onClick={() => scrollToSection('contact')}>{t('nav.contact')}</MobileNavLink>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center justify-between px-5">
@@ -170,7 +168,7 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                <Phone size={16} />
+                <Send size={16} />
                 <span>{t('nav.book')}</span>
               </Button>
             </div>

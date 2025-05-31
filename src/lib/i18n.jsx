@@ -9,7 +9,6 @@ const translations = {
             availability: 'Dostępność',
             location: 'Lokalizacja',
             attractions: 'Atrakcje',
-            contact: 'Kontakt',
             book: 'Rezerwuj'
         },
         hero: {
@@ -54,12 +53,12 @@ const translations = {
             calendarTitle: 'Kalendarz dostępności',
             bookingInfo: {
                 title: 'Informacje o rezerwacji',
-                minStay: 'Minimalny pobyt: 3 noce',
-                checkIn: 'Czas zameldowania: 15:00',
+                minStay: 'Minimalny pobyt: 2 noce',
+                checkIn: 'Czas zameldowania: 14:00',
                 checkOut: 'Czas wymeldowania: 11:00',
                 deposit: 'Wymagana zaliczka 50% do potwierdzenia rezerwacji',
-                payment: 'Pełna płatność wymagana 30 dni przed przyjazdem',
-                cancellation: 'Polityka anulowania: Pełny zwrot w przypadku anulowania 30 dni przed przyjazdem'
+                payment: 'Pełna płatność wymagana 5 dni przed przyjazdem',
+                cancellation: 'Polityka anulowania: Pełny zwrot w przypadku anulowania 7 dni przed przyjazdem'
             }
         },
         location: {
@@ -140,8 +139,8 @@ const translations = {
             }
         },
         contact: {
-            title: 'Kontakt',
-            subtitle: 'Skontaktuj się z nami',
+            title: 'Rezerwuj',
+            subtitle: 'Zarezerwuj swój pobyt',
             form: {
                 name: 'Imię i nazwisko',
                 email: 'Email',
@@ -152,13 +151,6 @@ const translations = {
                 message: 'Wiadomość',
                 messagePlaceholder: 'Specjalne życzenia lub pytania?',
                 submit: 'Wyślij zapytanie'
-            },
-            businessHours: {
-                title: 'Godziny pracy',
-                weekdays: 'Poniedziałek - Piątek:',
-                saturday: 'Sobota:',
-                sunday: 'Niedziela:',
-                closed: 'Zamknięte'
             }
         }
     },
@@ -170,7 +162,6 @@ const translations = {
             availability: 'Availability',
             location: 'Location',
             attractions: 'Attractions',
-            contact: 'Contact',
             book: 'Book Now'
         },
         hero: {
@@ -215,12 +206,12 @@ const translations = {
             calendarTitle: 'Availability Calendar',
             bookingInfo: {
                 title: 'Booking Information',
-                minStay: 'Minimum stay: 3 nights',
-                checkIn: 'Check-in time: 3:00 PM',
+                minStay: 'Minimum stay: 2 nights',
+                checkIn: 'Check-in time: 2:00 PM',
                 checkOut: 'Check-out time: 11:00 AM',
                 deposit: '50% deposit required to secure booking',
-                payment: 'Full payment due 30 days before arrival',
-                cancellation: 'Cancellation policy: Full refund if cancelled 30 days before arrival'
+                payment: 'Full payment due 5 days before arrival',
+                cancellation: 'Cancellation policy: Full refund if cancelled 7 days before arrival'
             }
         },
         location: {
@@ -301,8 +292,8 @@ const translations = {
             }
         },
         contact: {
-            title: 'Contact',
-            subtitle: 'Get in touch with us',
+            title: 'Book Now',
+            subtitle: 'Book your stay',
             form: {
                 name: 'Name',
                 email: 'Email',
@@ -313,13 +304,6 @@ const translations = {
                 message: 'Message',
                 messagePlaceholder: 'Any special requests or questions?',
                 submit: 'Send Inquiry'
-            },
-            businessHours: {
-                title: 'Business Hours',
-                weekdays: 'Monday - Friday:',
-                saturday: 'Saturday:',
-                sunday: 'Sunday:',
-                closed: 'Closed'
             }
         }
     }
