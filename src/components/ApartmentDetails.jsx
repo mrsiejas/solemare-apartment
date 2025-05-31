@@ -34,8 +34,23 @@ const ApartmentDetails = () => {
         variants={staggerContainer}
         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
       >
+        <motion.div
+          variants={fadeInUp}
+          className="rounded-lg overflow-hidden shadow-xl relative group aspect-square max-h-[500px] bg-gradient-to-br from-primary/10 to-background/30 flex items-center justify-center"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-background/30 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+          <motion.h2
+            className="text-6xl md:text-7xl font-bold text-primary/80 relative z-10"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {t('apartment.welcome')}
+          </motion.h2>
+        </motion.div>
+
         <motion.div variants={fadeInUp}>
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">{t('apartment.title')}</h2>
           <p className="text-lg text-gray-600 mb-6 whitespace-pre-line">
             {t('apartment.description')}
           </p>
@@ -46,16 +61,6 @@ const ApartmentDetails = () => {
             <FeatureCard icon={<Bath size={24} />} title={t('apartment.features.bathrooms')} value="1" />
             <FeatureCard icon={<Maximize size={24} />} title={t('apartment.features.size')} value="39 m²" />
           </div>
-        </motion.div>
-
-        <motion.div
-          variants={fadeInUp}
-          className="rounded-lg overflow-hidden shadow-xl"
-        >
-          <img
-            alt="Luxury apartment living room with ocean view"
-            className="w-full h-auto rounded-lg"
-            src="https://images.unsplash.com/photo-1695259496167-c05f25f1d793" />
         </motion.div>
       </motion.div>
     </section>

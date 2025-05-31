@@ -18,8 +18,9 @@ const translations = {
             cta: 'Sprawdź dostępność'
         },
         apartment: {
-            title: 'Cześć!',
-            description: 'Nasz apartament w Kątach Rybackich znajduje się na najwyższej kondygnacji z widokiem na Zatokę Wiślaną. Oferujemy komfortowe, 40-metrowe mieszkanie z klimatyzacją i prywatnym miejscem parkingowym.\n\n W budynku dostępne są: winda, podgrzewany basen oraz plac zabaw dla dzieci. Plaża znajduje się 2,5 km od budynku, a port rybacki zaledwie 200 metrów. W okolicy znajdziesz lasy, Zalew Wiślany oraz liczne trasy spacerowe i rowerowe.',
+            title: 'Hej!',
+            welcome: 'Hej!',
+            description: 'Nasz apartament w Kątach Rybackich znajduje się na najwyższej kondygnacji z widokiem na Zatokę Wiślaną. Oferujemy komfortowe, 40-metrowe mieszkanie z klimatyzacją i prywatnym miejscem parkingowym.\n\nW budynku dostępne są: winda, podgrzewany basen oraz plac zabaw dla dzieci. W odległości 5 minut spacerem znajduje się plaża, sklepy, restauracje oraz rezerwat kormoranów. W odległości 15 minut spacerem znajduje się Krynica Morska.',
             features: {
                 guests: 'Goście',
                 beds: 'Łóżka',
@@ -98,7 +99,8 @@ const translations = {
         },
         apartment: {
             title: 'Hi!',
-            description: 'Our apartment in Kąty Rybackie is located on the top floor with a view of the Vistula Lagoon. We offer a comfortable, 40-square-meter apartment with air conditioning and private parking.\n\nIn the building, you will find: an elevator, a heated swimming pool, and a children\'s playground. The beach is 2.5 km from the building, and the fishing port is just 200 meters away. In the surrounding area, you will find forests, the Vistula Lagoon, and numerous walking and cycling routes.',
+            welcome: 'Hi!',
+            description: 'Our apartment in Kąty Rybackie is located on the top floor with a view of the Vistula Lagoon. We offer a comfortable, 40-square-meter apartment with air conditioning and private parking.\n\nAvailable in the building: elevator, heated swimming pool, and children\'s playground. Within a 5-minute walk, you\'ll find the beach, shops, restaurants, and the Cormorant Reserve. Krynica Morska is a 15-minute walk away.',
             features: {
                 guests: 'Guests',
                 beds: 'Beds',

@@ -29,8 +29,8 @@ const Gallery = () => {
     },
     {
       id: 4,
-      alt: "Solemare Apartament 46 - Duzy pokój z aneksem kuchennym",
-      description: "Przestronny duży pokój z rozkładanym narożnikiem 2 osobowym",
+      alt: "Solemare Apartament 46 - Kuchnia",
+      description: "W  pełni wyposażona kuchnia: średnia lodówka, zmywarka, mikrofalówka i płyta indukcyjna",
       src: "/images/gallery/gallery_04.jpg"
     },
     {
@@ -41,9 +41,27 @@ const Gallery = () => {
     },
     {
       id: 6,
-      alt: "Solemare Apartament 46 - Taras",
+      alt: "Solemare Apartament 46 - Duży pokój",
       description: "Przestronny duży pokój z rozkładanym narożnikiem 2 osobowym",
       src: "/images/gallery/gallery_06.jpg"
+    },
+    {
+      id: 7,
+      alt: "Solemare Apartament 46 - Basen i Parking",
+      description: "Podgrzewany basen i miejsce parkingowe",
+      src: "/images/gallery/gallery_07.jpg"
+    },
+    {
+      id: 8,
+      alt: "Solemare Apartament 46 - Widok na Zatokę Wiślaną",
+      description: "Widok na Zatokę Wiślaną z tarasu",
+      src: "/images/gallery/gallery_08.jpg"
+    },
+    {
+      id: 9,
+      alt: "Solemare Apartament 46 - Plaża w kątach",
+      description: "Plaża w Kątach Rybackich jesienią",
+      src: "/images/gallery/gallery_09.jpg"
     }
   ];
 
