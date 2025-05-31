@@ -7,50 +7,54 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { useTranslation } from '@/lib/i18n';
+import { useForm, ValidationError } from '@formspree/react';
+import DatePicker from 'react-datepicker';
+import { pl } from 'date-fns/locale';
+import "react-datepicker/dist/react-datepicker.css";
 
 const ContactForm = () => {
   const { toast } = useToast();
   const t = useTranslation();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    checkIn: '',
-    checkOut: '',
-    guests: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useForm("xovwaplo");
+  const [checkIn, setCheckIn] = useState(null);
+  const [checkOut, setCheckOut] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  // Get tomorrow's date for min check-in
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
 
-  const handleSubmit = (e) => {
+  // Get max date (1 year from now)
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() + 1);
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const formData = new FormData(e.target);
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Add dates to formData
+    if (checkIn) formData.set('checkIn', checkIn.toISOString().split('T')[0]);
+    if (checkOut) formData.set('checkOut', checkOut.toISOString().split('T')[0]);
+
+    try {
+      await handleSubmit(e);
       toast({
         title: "Inquiry Sent!",
         description: "We've received your inquiry and will get back to you shortly.",
         duration: 5000,
       });
-
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        checkIn: '',
-        checkOut: '',
-        guests: '',
-        message: ''
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an error sending your inquiry. Please try again.",
+        variant: "destructive",
+        duration: 5000,
       });
+    }
+  };
 
-      setIsSubmitting(false);
-    }, 1500);
+  // Handle phone number input to allow only integers
+  const handlePhoneInput = (e) => {
+    e.target.value = e.target.value.replace(/[^\d]/g, '');
   };
 
   return (
@@ -73,19 +77,21 @@ const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="max-w-2xl mx-auto"
       >
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <form onSubmit={onSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="name">{t('contact.form.name')}</Label>
                 <Input
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  type="text"
                   required
+                  autoComplete="name"
                 />
+                <ValidationError prefix="Name" field="name" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -94,10 +100,10 @@ const ContactForm = () => {
                   id="email"
                   name="email"
                   type="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
+                  autoComplete="email"
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -106,10 +112,13 @@ const ContactForm = () => {
                   id="phone"
                   name="phone"
                   type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
                   required
+                  pattern="[0-9]*"
+                  onInput={handlePhoneInput}
+                  autoComplete="tel"
+                  placeholder="123456789"
                 />
+                <ValidationError prefix="Phone" field="phone" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -119,34 +128,54 @@ const ContactForm = () => {
                   name="guests"
                   type="number"
                   min="1"
-                  value={formData.guests}
-                  onChange={handleChange}
+                  max="4"
                   required
+                  defaultValue="1"
+                  placeholder="1-4"
                 />
+                <ValidationError prefix="Guests" field="guests" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="checkIn">{t('contact.form.checkIn')}</Label>
-                <Input
-                  id="checkIn"
-                  name="checkIn"
-                  type="date"
-                  value={formData.checkIn}
-                  onChange={handleChange}
-                  required
-                />
+                <div className="w-full">
+                  <DatePicker
+                    selected={checkIn}
+                    onChange={(date) => setCheckIn(date)}
+                    selectsStart
+                    startDate={checkIn}
+                    endDate={checkOut}
+                    minDate={tomorrow}
+                    maxDate={maxDate}
+                    dateFormat="dd/MM/yyyy"
+                    locale={pl}
+                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholderText="DD/MM/YYYY"
+                    required
+                  />
+                </div>
+                <ValidationError prefix="Check-in" field="checkIn" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="checkOut">{t('contact.form.checkOut')}</Label>
-                <Input
-                  id="checkOut"
-                  name="checkOut"
-                  type="date"
-                  value={formData.checkOut}
-                  onChange={handleChange}
-                  required
-                />
+                <div className="w-full">
+                  <DatePicker
+                    selected={checkOut}
+                    onChange={(date) => setCheckOut(date)}
+                    selectsEnd
+                    startDate={checkIn}
+                    endDate={checkOut}
+                    minDate={checkIn || tomorrow}
+                    maxDate={maxDate}
+                    dateFormat="dd/MM/yyyy"
+                    locale={pl}
+                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholderText="DD/MM/YYYY"
+                    required
+                  />
+                </div>
+                <ValidationError prefix="Check-out" field="checkOut" errors={state.errors} />
               </div>
             </div>
 
@@ -156,18 +185,18 @@ const ContactForm = () => {
                 id="message"
                 name="message"
                 placeholder={t('contact.form.messagePlaceholder')}
-                value={formData.message}
-                onChange={handleChange}
                 className="min-h-[100px]"
+                required
               />
+              <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
 
             <Button
               type="submit"
               className="w-full flex items-center justify-center gap-2"
-              disabled={isSubmitting}
+              disabled={state.submitting}
             >
-              {isSubmitting ? (
+              {state.submitting ? (
                 <>
                   <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full"></div>
                   <span>Sending...</span>
