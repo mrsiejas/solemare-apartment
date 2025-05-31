@@ -1,35 +1,33 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Wifi, 
-  Tv, 
-  Car, 
-  Coffee, 
-  Utensils, 
-  Wind, 
-  Waves, 
-  ShowerHead,
-  Snowflake,
+import {
+  Wifi,
+  Tv,
+  Car,
+  Coffee,
+  Soup,
+  Wind,
+  Waves,
+  UtensilsCrossed,
   Dumbbell,
-  Lock,
-  Shirt
+  Lock
 } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n';
 
 const Amenities = () => {
+  const t = useTranslation();
+
   const amenities = [
-    { icon: <Wifi size={24} />, name: 'Free Wi-Fi' },
-    { icon: <Tv size={24} />, name: 'Smart TV' },
-    { icon: <Car size={24} />, name: 'Free Parking' },
-    { icon: <Coffee size={24} />, name: 'Coffee Machine' },
-    { icon: <Utensils size={24} />, name: 'Fully Equipped Kitchen' },
-    { icon: <Wind size={24} />, name: 'Air Conditioning' },
-    { icon: <Waves size={24} />, name: 'Beach Access' },
-    { icon: <ShowerHead size={24} />, name: 'Rain Shower' },
-    { icon: <Snowflake size={24} />, name: 'Refrigerator' },
-    { icon: <Dumbbell size={24} />, name: 'Fitness Center' },
-    { icon: <Lock size={24} />, name: 'Security System' },
-    { icon: <Shirt size={24} />, name: 'Washer & Dryer' }
+    { icon: <Wifi size={24} />, name: t('amenities.items.wifi') },
+    { icon: <Tv size={24} />, name: t('amenities.items.tv') },
+    { icon: <Car size={24} />, name: t('amenities.items.parking') },
+    { icon: <Coffee size={24} />, name: t('amenities.items.coffee') },
+    { icon: <Soup size={24} />, name: t('amenities.items.kitchen') },
+    { icon: <Wind size={24} />, name: t('amenities.items.ac') },
+    { icon: <Waves size={24} />, name: t('amenities.items.pool') },
+    { icon: <UtensilsCrossed size={24} />, name: t('amenities.items.dishwasher') },
+    { icon: <Dumbbell size={24} />, name: t('amenities.items.gym') },
+    { icon: <Lock size={24} />, name: t('amenities.items.security') }
   ];
 
   const containerVariants = {
@@ -60,14 +58,14 @@ const Amenities = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">Apartment Amenities</h2>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('amenities.title')}</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Our apartment is equipped with everything you need for a comfortable and luxurious stay.
+          {t('amenities.subtitle')}
         </p>
       </motion.div>
-      
-      <motion.div 
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6"
+
+      <motion.div
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

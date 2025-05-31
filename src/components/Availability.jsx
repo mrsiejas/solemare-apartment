@@ -30,7 +30,7 @@ const Availability = () => {
       >
         <div className="calendar-container">
           <iframe
-            src="https://calendar.google.com/calendar/embed?src=707af2fa11decccd6ba8415cd339e8ad33c32b03a37462b4e50ad02db48a7977%40group.calendar.google.com&ctz=Europe%2FWarsaw"
+            src="https://calendar.google.com/calendar/embed?src=707af2fa11decccd6ba8415cd339e8ad33c32b03a37462b4e50ad02db48a7977%40group.calendar.google.com&ctz=Europe%2FWarsaw&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
             style={{ border: 0 }}
             width="800"
             height="600"
@@ -57,7 +57,6 @@ const Availability = () => {
               <li>• {t('availability.bookingInfo.minStay')}</li>
               <li>• {t('availability.bookingInfo.checkIn')}</li>
               <li>• {t('availability.bookingInfo.checkOut')}</li>
-              <li>• {t('availability.bookingInfo.deposit')}</li>
               <li>• {t('availability.bookingInfo.payment')}</li>
               <li>• {t('availability.bookingInfo.cancellation')}</li>
             </ul>

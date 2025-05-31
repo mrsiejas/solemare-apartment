@@ -30,7 +30,19 @@ const translations = {
         },
         amenities: {
             title: 'Udogodnienia',
-            subtitle: 'Wszystko, czego potrzebujesz do komfortowego pobytu'
+            subtitle: 'Wszystko, czego potrzebujesz do komfortowego pobytu',
+            items: {
+                wifi: 'Darmowe Wi-Fi',
+                tv: 'Smart TV',
+                parking: 'Parking',
+                coffee: 'Ekspres do kawy',
+                kitchen: 'W pełni wyposażona kuchnia',
+                ac: 'Klimatyzacja',
+                pool: 'Podgrzewany basen',
+                dishwasher: 'Zmywarka do naczyń',
+                gym: 'Siłownia na świeżym powietrzu',
+                security: 'System bezpieczeństwa'
+            }
         },
         gallery: {
             title: 'Galeria',
@@ -110,7 +122,19 @@ const translations = {
         },
         amenities: {
             title: 'Amenities',
-            subtitle: 'Everything you need for a comfortable stay'
+            subtitle: 'Everything you need for a comfortable stay',
+            items: {
+                wifi: 'Free Wi-Fi',
+                tv: 'Smart TV',
+                parking: 'Parking',
+                coffee: 'Coffee Machine',
+                kitchen: 'Fully Equipped Kitchen',
+                ac: 'Air Conditioning',
+                pool: 'Heated Swimming Pool',
+                dishwasher: 'Dishwasher',
+                gym: 'Outdoor Gym',
+                security: 'Security System'
+            }
         },
         gallery: {
             title: 'Gallery',
