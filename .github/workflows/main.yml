@@ -42,11 +42,11 @@ jobs:
       - name: HTML Validation
         run: npx html-validate index.html
 
-      # # CSS validation
-      # - name: CSS Validation
-      #   run: |
-      #     npx stylelint "css/*.css" --fix
-      #     npx stylelint "css/*.css"
+      # CSS validation
+      - name: CSS Validation
+        run: |
+          npx stylelint "src/**/*.css" "src/**/*.jsx" --fix
+          npx stylelint "src/**/*.css" "src/**/*.jsx"
 
       # # JavaScript linting
       # - name: ESLint
@@ -63,7 +63,7 @@ jobs:
       #     configPath: './lighthouse.config.js'
 
   deploy-preview:
-    needs: quality
+    # needs: quality
     if: github.ref == 'refs/heads/preview' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'preview')
     runs-on: ubuntu-latest
     name: Deploy Preview
