@@ -151,7 +151,15 @@ const translations = {
                 message: 'Wiadomość',
                 messagePlaceholder: 'Specjalne życzenia lub pytania?',
                 submit: 'Wyślij zapytanie',
-                emailError: 'Wprowadź poprawny adres email'
+                emailError: 'Wprowadź poprawny adres email',
+                success: {
+                    title: 'Zapytanie wysłane!',
+                    description: 'Otrzymaliśmy Twoje zapytanie i odpowiemy najszybciej jak to możliwe.'
+                },
+                error: {
+                    title: 'Błąd',
+                    description: 'Wystąpił błąd podczas wysyłania zapytania. Spróbuj ponownie.'
+                }
             }
         }
     },
@@ -305,7 +313,15 @@ const translations = {
                 message: 'Message',
                 messagePlaceholder: 'Any special requests or questions?',
                 submit: 'Send Inquiry',
-                emailError: 'Please enter a valid email address'
+                emailError: 'Please enter a valid email address',
+                success: {
+                    title: 'Inquiry Sent!',
+                    description: 'We\'ve received your inquiry and will get back to you shortly.'
+                },
+                error: {
+                    title: 'Error',
+                    description: 'There was an error sending your inquiry. Please try again.'
+                }
             }
         }
     }
