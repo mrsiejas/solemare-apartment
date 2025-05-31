@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palmtree, UtensilsCrossed, Ticket } from 'lucide-react';
+import { MapPin, UtensilsCrossed } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 
 const LocalAttractions = () => {
@@ -8,65 +8,69 @@ const LocalAttractions = () => {
 
   const attractions = [
     {
-      category: t('attractions.categories.beaches'),
-      icon: <Palmtree size={24} />,
+      category: t('attractions.categories.attractions'),
+      icon: <MapPin size={24} />,
       items: [
         {
-          name: t('attractions.items.southBeach.name'),
-          description: t('attractions.items.southBeach.description'),
-          distance: t('attractions.items.southBeach.distance')
+          name: t('attractions.items.beach.name'),
+          description: t('attractions.items.beach.description'),
+          distance: t('attractions.items.beach.distance')
         },
         {
-          name: t('attractions.items.northShore.name'),
-          description: t('attractions.items.northShore.description'),
-          distance: t('attractions.items.northShore.distance')
+          name: t('attractions.items.vistulaLagoonMuseum.name'),
+          description: t('attractions.items.vistulaLagoonMuseum.description'),
+          distance: t('attractions.items.vistulaLagoonMuseum.distance')
         },
         {
-          name: t('attractions.items.hauloverBeach.name'),
-          description: t('attractions.items.hauloverBeach.description'),
-          distance: t('attractions.items.hauloverBeach.distance')
+          name: t('attractions.items.stutthofMuseum.name'),
+          description: t('attractions.items.stutthofMuseum.description'),
+          distance: t('attractions.items.stutthofMuseum.distance')
+        },
+        {
+          name: t('attractions.items.ropePark.name'),
+          description: t('attractions.items.ropePark.description'),
+          distance: t('attractions.items.ropePark.distance')
+        },
+        {
+          name: t('attractions.items.pirateTower.name'),
+          description: t('attractions.items.pirateTower.description'),
+          distance: t('attractions.items.pirateTower.distance')
+        },
+        {
+          name: t('attractions.items.bikeTrails.name'),
+          description: t('attractions.items.bikeTrails.description'),
+          distance: t('attractions.items.bikeTrails.distance')
         }
       ]
     },
     {
-      category: t('attractions.categories.restaurants'),
+      category: t('attractions.categories.food'),
       icon: <UtensilsCrossed size={24} />,
       items: [
         {
-          name: t('attractions.items.oceanViewBistro.name'),
-          description: t('attractions.items.oceanViewBistro.description'),
-          distance: t('attractions.items.oceanViewBistro.distance')
+          name: t('attractions.items.livio.name'),
+          description: t('attractions.items.livio.description'),
+          distance: t('attractions.items.livio.distance')
         },
         {
-          name: t('attractions.items.coastalKitchen.name'),
-          description: t('attractions.items.coastalKitchen.description'),
-          distance: t('attractions.items.coastalKitchen.distance')
+          name: t('attractions.items.polomarket.name'),
+          description: t('attractions.items.polomarket.description'),
+          distance: t('attractions.items.polomarket.distance')
         },
         {
-          name: t('attractions.items.beachsideTaco.name'),
-          description: t('attractions.items.beachsideTaco.description'),
-          distance: t('attractions.items.beachsideTaco.distance')
-        }
-      ]
-    },
-    {
-      category: t('attractions.categories.entertainment'),
-      icon: <Ticket size={24} />,
-      items: [
-        {
-          name: t('attractions.items.newWorldSymphony.name'),
-          description: t('attractions.items.newWorldSymphony.description'),
-          distance: t('attractions.items.newWorldSymphony.distance')
+          name: t('attractions.items.fishBar.name'),
+          description: t('attractions.items.fishBar.description'),
+          distance: t('attractions.items.fishBar.distance')
         },
         {
-          name: t('attractions.items.artDecoDistrict.name'),
-          description: t('attractions.items.artDecoDistrict.description'),
-          distance: t('attractions.items.artDecoDistrict.distance')
+          name: t('attractions.items.tristan.name'),
+          description: t('attractions.items.tristan.description'),
+          distance: t('attractions.items.tristan.distance')
         },
         {
-          name: t('attractions.items.perezArtMuseum.name'),
-          description: t('attractions.items.perezArtMuseum.description'),
-          distance: t('attractions.items.perezArtMuseum.distance')
+          name: t('attractions.items.sztutozeria.name'),
+          description: t('attractions.items.sztutozeria.description'),
+          distance: t('attractions.items.sztutozeria.distance')
         }
       ]
     }
@@ -129,7 +133,7 @@ const LocalAttractions = () => {
                 >
                   <h4 className="text-xl font-semibold text-gray-800 mb-2">{item.name}</h4>
                   <p className="text-gray-600 mb-4">{item.description}</p>
-                  <p className="text-sm font-medium text-primary">Distance: {item.distance}</p>
+                  <p className="text-sm font-medium text-primary">{item.distance}</p>
                 </motion.div>
               ))}
             </div>

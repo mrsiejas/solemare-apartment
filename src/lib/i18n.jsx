@@ -67,58 +67,67 @@ const translations = {
             subtitle: 'Idealnie usytuowany w sercu miasta'
         },
         attractions: {
-            title: 'Atrakcje w okolicy',
+            title: 'Atrakcje i Jedzenie',
             subtitle: 'Odkryj najlepsze miejsca w okolicy',
             categories: {
-                beaches: 'Plaże',
-                restaurants: 'Restauracje',
-                entertainment: 'Rozrywka'
+                attractions: 'Atrakcje',
+                food: 'Jedzenie'
             },
             items: {
-                southBeach: {
-                    name: 'Plaża Południowa',
-                    description: 'Słynna plaża z białym piaskiem i turkusową wodą, idealna do opalania i obserwowania ludzi.',
-                    distance: '5 min spacerem'
+                beach: {
+                    name: 'Plaża 51 Kąty Rybackie',
+                    description: 'Piękna plaża z parkingiem dla samochodów.',
+                    distance: '2.4 km spacerem'
                 },
-                northShore: {
-                    name: 'Park Północny',
-                    description: 'Spokojniejsza plaża z doskonałymi warunkami do pływania i pięknymi widokami na zachód słońca.',
-                    distance: '15 min spacerem'
+                vistulaLagoonMuseum: {
+                    name: 'Muzeum Zalewu Wiślanego',
+                    description: 'Muzeum prezentujące historię i kulturę regionu Zalewu Wiślanego.',
+                    distance: 'ul. Rybacka 64, Kąty Rybackie'
                 },
-                hauloverBeach: {
-                    name: 'Plaża Haulover',
-                    description: 'Przestronna plaża z doskonałymi udogodnieniami i wypożyczalnią sprzętu wodnego.',
-                    distance: '10 min samochodem'
+                stutthofMuseum: {
+                    name: 'Muzeum Stutthof',
+                    description: 'Miejsce pamięci i muzeum historyczne.',
+                    distance: 'ul. Muzealna 6, Sztutowo'
                 },
-                oceanViewBistro: {
-                    name: 'Bistro z Widokiem na Ocean',
-                    description: 'Ekskluzywna restauracja z owocami morza, panoramiczny widok na ocean i świeże lokalne ryby.',
-                    distance: '5 min spacerem'
+                ropePark: {
+                    name: 'Park Linowy dla Dzieci',
+                    description: 'Atrakcyjny park linowy z trasami dostosowanymi do różnych grup wiekowych.',
+                    distance: 'ul. Gdańska 12, Stegna'
                 },
-                coastalKitchen: {
-                    name: 'Kuchnia Nadmorska',
-                    description: 'Restauracja farm-to-table specjalizująca się w kuchni śródziemnomorskiej z nowoczesnym akcentem.',
-                    distance: '10 min spacerem'
+                pirateTower: {
+                    name: 'Wieża Obserwacyjna "Góra Pirat"',
+                    description: 'Wieża widokowa z panoramą na okolicę.',
+                    distance: 'w okolicy'
                 },
-                beachsideTaco: {
-                    name: 'Taco Shack przy Plaży',
-                    description: 'Przytulne miejsce z autentycznym meksykańskim jedzeniem ulicznym i orzeźwiającymi margaritami.',
-                    distance: '7 min spacerem'
+                bikeTrails: {
+                    name: 'Trasy Rowerowe',
+                    description: 'Sieć tras rowerowych, w tym popularna trasa R10.',
+                    distance: 'dostępne w okolicy'
                 },
-                newWorldSymphony: {
-                    name: 'Nowa Światowa Symfonia',
-                    description: 'Światowej klasy sala koncertowa z występami muzyki klasycznej i koncertami WALLCAST na świeżym powietrzu.',
-                    distance: '15 min spacerem'
+                livio: {
+                    name: 'Livio - Sklep Spożywczy',
+                    description: 'Lokalny sklep spożywczy z podstawowymi produktami.',
+                    distance: '300 m od apartamentu'
                 },
-                artDecoDistrict: {
-                    name: 'Dzielnica Art Deco',
-                    description: 'Ikoniczna dzielnica z kolorowymi zabytkowymi budynkami i wycieczkami z przewodnikiem.',
-                    distance: '10 min spacerem'
+                polomarket: {
+                    name: 'Polomarket i Biedronka',
+                    description: 'Duże sieci handlowe z szerokim asortymentem.',
+                    distance: 'w Sztutowie'
                 },
-                perezArtMuseum: {
-                    name: 'Muzeum Sztuki Pérez',
-                    description: 'Muzeum sztuki współczesnej z imponującą architekturą i widokiem na nabrzeże.',
-                    distance: '25 min samochodem'
+                fishBar: {
+                    name: 'Bar Rybny u Basi',
+                    description: 'Lokalny bar serwujący świeże dania rybne.',
+                    distance: '150 m od apartamentu'
+                },
+                tristan: {
+                    name: 'Tristan Hotel & SPA',
+                    description: 'Hotel z restauracją i strefą SPA.',
+                    distance: '350 m od apartamentu'
+                },
+                sztutozeria: {
+                    name: 'Sztutozeria',
+                    description: 'Pizzeria serwująca włoskie specjały.',
+                    distance: 'ul. Obozowa 4, Sztutowo'
                 }
             }
         },
@@ -211,58 +220,67 @@ const translations = {
             subtitle: 'Perfectly situated in the heart of the city'
         },
         attractions: {
-            title: 'Local Attractions',
+            title: 'Attractions & Food',
             subtitle: 'Discover the best places in the area',
             categories: {
-                beaches: 'Beaches',
-                restaurants: 'Restaurants',
-                entertainment: 'Entertainment'
+                attractions: 'Attractions',
+                food: 'Food'
             },
             items: {
-                southBeach: {
-                    name: 'South Beach',
-                    description: 'Famous beach with white sand and turquoise waters, perfect for sunbathing and people-watching.',
-                    distance: '5 min walk'
+                beach: {
+                    name: 'Beach 51 Kąty Rybackie',
+                    description: 'Beautiful beach with car parking.',
+                    distance: '2.4 km walk'
                 },
-                northShore: {
-                    name: 'North Shore Park',
-                    description: 'Quieter beach with excellent swimming conditions and beautiful sunset views.',
-                    distance: '15 min walk'
+                vistulaLagoonMuseum: {
+                    name: 'Vistula Lagoon Museum',
+                    description: 'Museum showcasing the history and culture of the Vistula Lagoon region.',
+                    distance: 'Rybacka 64, Kąty Rybackie'
                 },
-                hauloverBeach: {
-                    name: 'Haulover Beach',
-                    description: 'Spacious beach with great facilities and water sports rentals available.',
-                    distance: '10 min drive'
+                stutthofMuseum: {
+                    name: 'Stutthof Museum',
+                    description: 'Memorial site and historical museum.',
+                    distance: 'Muzealna 6, Sztutowo'
                 },
-                oceanViewBistro: {
-                    name: 'Ocean View Bistro',
-                    description: 'Upscale seafood restaurant with panoramic ocean views and fresh local catches.',
-                    distance: '5 min walk'
+                ropePark: {
+                    name: 'Rope Park for Children',
+                    description: 'Attractive rope park with routes adapted to different age groups.',
+                    distance: 'Gdańska 12, Stegna'
                 },
-                coastalKitchen: {
-                    name: 'Coastal Kitchen',
-                    description: 'Farm-to-table restaurant specializing in Mediterranean cuisine with a modern twist.',
-                    distance: '10 min walk'
+                pirateTower: {
+                    name: 'Observation Tower "Pirate Hill"',
+                    description: 'Observation tower with panoramic views of the area.',
+                    distance: 'in the vicinity'
                 },
-                beachsideTaco: {
-                    name: 'Beachside Taco Shack',
-                    description: 'Casual spot for authentic Mexican street food and refreshing margaritas.',
-                    distance: '7 min walk'
+                bikeTrails: {
+                    name: 'Bike Trails',
+                    description: 'Network of cycling routes, including the popular R10 route.',
+                    distance: 'available in the area'
                 },
-                newWorldSymphony: {
-                    name: 'New World Symphony',
-                    description: 'World-class concert hall featuring classical music performances and outdoor WALLCAST concerts.',
-                    distance: '15 min walk'
+                livio: {
+                    name: 'Livio - Grocery Store',
+                    description: 'Local grocery store with basic products.',
+                    distance: '300 m from the apartment'
                 },
-                artDecoDistrict: {
-                    name: 'Art Deco Historic District',
-                    description: 'Iconic neighborhood with colorful historic buildings and guided walking tours.',
-                    distance: '10 min walk'
+                polomarket: {
+                    name: 'Polomarket and Biedronka',
+                    description: 'Large retail chains with a wide range of products.',
+                    distance: 'in Sztutowo'
                 },
-                perezArtMuseum: {
-                    name: 'Pérez Art Museum',
-                    description: 'Contemporary art museum with stunning architecture and waterfront views.',
-                    distance: '25 min drive'
+                fishBar: {
+                    name: 'Fish Bar at Basia\'s',
+                    description: 'Local bar serving fresh fish dishes.',
+                    distance: '150 m from the apartment'
+                },
+                tristan: {
+                    name: 'Tristan Hotel & SPA',
+                    description: 'Hotel with restaurant and SPA area.',
+                    distance: '350 m from the apartment'
+                },
+                sztutozeria: {
+                    name: 'Sztutozeria',
+                    description: 'Pizzeria serving Italian specialties.',
+                    distance: 'Obozowa 4, Sztutowo'
                 }
             }
         },
