@@ -31,7 +31,7 @@ const Availability = () => {
         <div className="calendar-container">
           <iframe
             src="https://calendar.google.com/calendar/embed?src=707af2fa11decccd6ba8415cd339e8ad33c32b03a37462b4e50ad02db48a7977%40group.calendar.google.com&ctz=Europe%2FWarsaw"
-            style={{ border: 0, border: 'none' }}
+            style={{ border: 0 }}
             width="800"
             height="600"
             className="overflow-hidden"

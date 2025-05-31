@@ -36,7 +36,7 @@ const ApartmentDetails = () => {
       >
         <motion.div variants={fadeInUp}>
           <h2 className="text-3xl font-bold mb-6 text-gray-800">{t('apartment.title')}</h2>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-600 mb-6 whitespace-pre-line">
             {t('apartment.description')}
           </p>
 

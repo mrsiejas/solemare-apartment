@@ -11,7 +11,7 @@ const Footer = () => {
           <p className="flex items-center justify-center gap-1">
             <span>© {currentYear} Solemare Apartament 46. All rights reserved.</span>
             <span className="inline-flex items-center">
-              Made with <Heart size={14} className="text-red-500 mx-1" /> in Zielonka
+              Made with <Heart size={14} className="text-red-500 mx-1" /> by <a href="https://flowcv.me/blazejsiejek" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 ml-1">Blazej</a>
             </span>
           </p>
         </div>

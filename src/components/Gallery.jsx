@@ -13,37 +13,37 @@ const Gallery = () => {
       id: 1,
       alt: "Apartament Solemare 46 - Sypialnia",
       description: "Sypialnia z łóżkiem 2 osobowym",
-      src: "/images/gallery/IMG-20250419-WA0028.jpg"
+      src: "/images/gallery/gallery_01.jpg"
     },
     {
       id: 2,
       alt: "Apartament Solemare 46 - Łazienka",
       description: "Łazienka z prysznicem i deszczownicą",
-      src: "/images/gallery/IMG-20250419-WA0032.jpg"
+      src: "/images/gallery/gallery_02.jpg"
     },
     {
       id: 3,
       alt: "Apartament Solemare 46 - Łazienka",
       description: "Łazienka",
-      src: "/images/gallery/IMG-20250419-WA0033.jpg"
+      src: "/images/gallery/gallery_03.jpg"
     },
     {
       id: 4,
-      alt: "Solemare Apartament 46 - Kuchnia",
-      description: "W  pełni wyposażona kuchnia: średnia lodówka, zmywarka, mikrofalówka i płyta indukcyjna",
-      src: "/images/gallery/IMG-20250419-WA0036.jpg"
+      alt: "Solemare Apartament 46 - Duzy pokój z aneksem kuchennym",
+      description: "Przestronny duży pokój z rozkładanym narożnikiem 2 osobowym",
+      src: "/images/gallery/gallery_04.jpg"
     },
     {
       id: 5,
       alt: "Solemare Apartament 46 - Korytarz",
       description: "Wejście do mieszkania i korytarz",
-      src: "/images/gallery/IMG-20250419-WA0039.jpg"
+      src: "/images/gallery/gallery_05.jpg"
     },
     {
       id: 6,
-      alt: "Solemare Apartament 46 - Duży pokój",
+      alt: "Solemare Apartament 46 - Taras",
       description: "Przestronny duży pokój z rozkładanym narożnikiem 2 osobowym",
-      src: "/images/gallery/IMG-20250419-WA0047.jpg"
+      src: "/images/gallery/gallery_06.jpg"
     }
   ];
 

@@ -60,7 +60,18 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
+			textShadow: {
+				'default': '0 2px 4px rgba(0,0,0,0.5)',
+			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addUtilities }) {
+			addUtilities({
+				'.text-shadow': {
+					'text-shadow': '0 2px 4px rgba(0,0,0,0.5)',
+				},
+			});
+		},
+	],
 };

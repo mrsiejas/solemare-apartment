@@ -19,7 +19,7 @@ const translations = {
         },
         apartment: {
             title: 'Cześć!',
-            description: 'Witaj w naszym luksusowym apartamencie z widokiem na morze, gdzie komfort spotyka się z elegancją. Idealnie usytuowany z zapierającym dech w piersiach widokiem na ocean, nasz nowoczesny apartament oferuje idealne połączenie relaksu i wygody dla Twojego wymarzonego wypoczynku.',
+            description: 'Nasz apartament w Kątach Rybackich znajduje się na najwyższej kondygnacji z widokiem na Zatokę Wiślaną. Oferujemy komfortowe, 40-metrowe mieszkanie z klimatyzacją i prywatnym miejscem parkingowym.\n\n W budynku dostępne są: winda, podgrzewany basen oraz plac zabaw dla dzieci. Plaża znajduje się 2,5 km od budynku, a port rybacki zaledwie 200 metrów. W okolicy znajdziesz lasy, Zalew Wiślany oraz liczne trasy spacerowe i rowerowe.',
             features: {
                 guests: 'Goście',
                 beds: 'Łóżka',
@@ -98,7 +98,7 @@ const translations = {
         },
         apartment: {
             title: 'Hi!',
-            description: 'Welcome to our luxurious beachfront apartment, where comfort meets elegance. Perfectly situated with stunning ocean views, our modern apartment offers the ideal blend of relaxation and convenience for your perfect getaway.',
+            description: 'Our apartment in Kąty Rybackie is located on the top floor with a view of the Vistula Lagoon. We offer a comfortable, 40-square-meter apartment with air conditioning and private parking.\n\nIn the building, you will find: an elevator, a heated swimming pool, and a children\'s playground. The beach is 2.5 km from the building, and the fishing port is just 200 meters away. In the surrounding area, you will find forests, the Vistula Lagoon, and numerous walking and cycling routes.',
             features: {
                 guests: 'Guests',
                 beds: 'Beds',
@@ -163,6 +163,29 @@ const translations = {
 
 const LanguageContext = createContext();
 
+const useLanguage = () => {
+    const context = useContext(LanguageContext);
+    if (!context) {
+        throw new Error('useLanguage must be used within a LanguageProvider');
+    }
+    return context;
+};
+
+const useTranslation = () => {
+    const { language } = useLanguage();
+
+    return (key) => {
+        const keys = key.split('.');
+        let value = translations[language];
+
+        for (const k of keys) {
+            value = value?.[k];
+        }
+
+        return value || key;
+    };
+};
+
 export const LanguageProvider = ({ children }) => {
     const [language, setLanguage] = useState('pl');
 
@@ -178,25 +201,4 @@ export const LanguageProvider = ({ children }) => {
     );
 };
 
-export const useLanguage = () => {
-    const context = useContext(LanguageContext);
-    if (!context) {
-        throw new Error('useLanguage must be used within a LanguageProvider');
-    }
-    return context;
-};
-
-export const useTranslation = () => {
-    const { language } = useLanguage();
-
-    return (key) => {
-        const keys = key.split('.');
-        let value = translations[language];
-
-        for (const k of keys) {
-            value = value?.[k];
-        }
-
-        return value || key;
-    };
-}; 
+export { useLanguage, useTranslation }; 
