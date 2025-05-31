@@ -68,7 +68,59 @@ const translations = {
         },
         attractions: {
             title: 'Atrakcje w okolicy',
-            subtitle: 'Odkryj najlepsze miejsca w okolicy'
+            subtitle: 'Odkryj najlepsze miejsca w okolicy',
+            categories: {
+                beaches: 'Plaże',
+                restaurants: 'Restauracje',
+                entertainment: 'Rozrywka'
+            },
+            items: {
+                southBeach: {
+                    name: 'Plaża Południowa',
+                    description: 'Słynna plaża z białym piaskiem i turkusową wodą, idealna do opalania i obserwowania ludzi.',
+                    distance: '5 min spacerem'
+                },
+                northShore: {
+                    name: 'Park Północny',
+                    description: 'Spokojniejsza plaża z doskonałymi warunkami do pływania i pięknymi widokami na zachód słońca.',
+                    distance: '15 min spacerem'
+                },
+                hauloverBeach: {
+                    name: 'Plaża Haulover',
+                    description: 'Przestronna plaża z doskonałymi udogodnieniami i wypożyczalnią sprzętu wodnego.',
+                    distance: '10 min samochodem'
+                },
+                oceanViewBistro: {
+                    name: 'Bistro z Widokiem na Ocean',
+                    description: 'Ekskluzywna restauracja z owocami morza, panoramiczny widok na ocean i świeże lokalne ryby.',
+                    distance: '5 min spacerem'
+                },
+                coastalKitchen: {
+                    name: 'Kuchnia Nadmorska',
+                    description: 'Restauracja farm-to-table specjalizująca się w kuchni śródziemnomorskiej z nowoczesnym akcentem.',
+                    distance: '10 min spacerem'
+                },
+                beachsideTaco: {
+                    name: 'Taco Shack przy Plaży',
+                    description: 'Przytulne miejsce z autentycznym meksykańskim jedzeniem ulicznym i orzeźwiającymi margaritami.',
+                    distance: '7 min spacerem'
+                },
+                newWorldSymphony: {
+                    name: 'Nowa Światowa Symfonia',
+                    description: 'Światowej klasy sala koncertowa z występami muzyki klasycznej i koncertami WALLCAST na świeżym powietrzu.',
+                    distance: '15 min spacerem'
+                },
+                artDecoDistrict: {
+                    name: 'Dzielnica Art Deco',
+                    description: 'Ikoniczna dzielnica z kolorowymi zabytkowymi budynkami i wycieczkami z przewodnikiem.',
+                    distance: '10 min spacerem'
+                },
+                perezArtMuseum: {
+                    name: 'Muzeum Sztuki Pérez',
+                    description: 'Muzeum sztuki współczesnej z imponującą architekturą i widokiem na nabrzeże.',
+                    distance: '25 min samochodem'
+                }
+            }
         },
         contact: {
             title: 'Kontakt',
@@ -160,7 +212,59 @@ const translations = {
         },
         attractions: {
             title: 'Local Attractions',
-            subtitle: 'Discover the best places in the area'
+            subtitle: 'Discover the best places in the area',
+            categories: {
+                beaches: 'Beaches',
+                restaurants: 'Restaurants',
+                entertainment: 'Entertainment'
+            },
+            items: {
+                southBeach: {
+                    name: 'South Beach',
+                    description: 'Famous beach with white sand and turquoise waters, perfect for sunbathing and people-watching.',
+                    distance: '5 min walk'
+                },
+                northShore: {
+                    name: 'North Shore Park',
+                    description: 'Quieter beach with excellent swimming conditions and beautiful sunset views.',
+                    distance: '15 min walk'
+                },
+                hauloverBeach: {
+                    name: 'Haulover Beach',
+                    description: 'Spacious beach with great facilities and water sports rentals available.',
+                    distance: '10 min drive'
+                },
+                oceanViewBistro: {
+                    name: 'Ocean View Bistro',
+                    description: 'Upscale seafood restaurant with panoramic ocean views and fresh local catches.',
+                    distance: '5 min walk'
+                },
+                coastalKitchen: {
+                    name: 'Coastal Kitchen',
+                    description: 'Farm-to-table restaurant specializing in Mediterranean cuisine with a modern twist.',
+                    distance: '10 min walk'
+                },
+                beachsideTaco: {
+                    name: 'Beachside Taco Shack',
+                    description: 'Casual spot for authentic Mexican street food and refreshing margaritas.',
+                    distance: '7 min walk'
+                },
+                newWorldSymphony: {
+                    name: 'New World Symphony',
+                    description: 'World-class concert hall featuring classical music performances and outdoor WALLCAST concerts.',
+                    distance: '15 min walk'
+                },
+                artDecoDistrict: {
+                    name: 'Art Deco Historic District',
+                    description: 'Iconic neighborhood with colorful historic buildings and guided walking tours.',
+                    distance: '10 min walk'
+                },
+                perezArtMuseum: {
+                    name: 'Pérez Art Museum',
+                    description: 'Contemporary art museum with stunning architecture and waterfront views.',
+                    distance: '25 min drive'
+                }
+            }
         },
         contact: {
             title: 'Contact',

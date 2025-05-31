@@ -1,69 +1,72 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Palmtree, UtensilsCrossed, Ticket } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n';
 
 const LocalAttractions = () => {
+  const t = useTranslation();
+
   const attractions = [
     {
-      category: "Beaches",
+      category: t('attractions.categories.beaches'),
       icon: <Palmtree size={24} />,
       items: [
         {
-          name: "South Beach",
-          description: "Famous beach with white sand and turquoise waters, perfect for sunbathing and people-watching.",
-          distance: "5 min walk"
+          name: t('attractions.items.southBeach.name'),
+          description: t('attractions.items.southBeach.description'),
+          distance: t('attractions.items.southBeach.distance')
         },
         {
-          name: "North Shore Park",
-          description: "Quieter beach with excellent swimming conditions and beautiful sunset views.",
-          distance: "15 min walk"
+          name: t('attractions.items.northShore.name'),
+          description: t('attractions.items.northShore.description'),
+          distance: t('attractions.items.northShore.distance')
         },
         {
-          name: "Haulover Beach",
-          description: "Spacious beach with great facilities and water sports rentals available.",
-          distance: "10 min drive"
+          name: t('attractions.items.hauloverBeach.name'),
+          description: t('attractions.items.hauloverBeach.description'),
+          distance: t('attractions.items.hauloverBeach.distance')
         }
       ]
     },
     {
-      category: "Restaurants",
+      category: t('attractions.categories.restaurants'),
       icon: <UtensilsCrossed size={24} />,
       items: [
         {
-          name: "Ocean View Bistro",
-          description: "Upscale seafood restaurant with panoramic ocean views and fresh local catches.",
-          distance: "5 min walk"
+          name: t('attractions.items.oceanViewBistro.name'),
+          description: t('attractions.items.oceanViewBistro.description'),
+          distance: t('attractions.items.oceanViewBistro.distance')
         },
         {
-          name: "Coastal Kitchen",
-          description: "Farm-to-table restaurant specializing in Mediterranean cuisine with a modern twist.",
-          distance: "10 min walk"
+          name: t('attractions.items.coastalKitchen.name'),
+          description: t('attractions.items.coastalKitchen.description'),
+          distance: t('attractions.items.coastalKitchen.distance')
         },
         {
-          name: "Beachside Taco Shack",
-          description: "Casual spot for authentic Mexican street food and refreshing margaritas.",
-          distance: "7 min walk"
+          name: t('attractions.items.beachsideTaco.name'),
+          description: t('attractions.items.beachsideTaco.description'),
+          distance: t('attractions.items.beachsideTaco.distance')
         }
       ]
     },
     {
-      category: "Entertainment",
+      category: t('attractions.categories.entertainment'),
       icon: <Ticket size={24} />,
       items: [
         {
-          name: "New World Symphony",
-          description: "World-class concert hall featuring classical music performances and outdoor WALLCAST concerts.",
-          distance: "15 min walk"
+          name: t('attractions.items.newWorldSymphony.name'),
+          description: t('attractions.items.newWorldSymphony.description'),
+          distance: t('attractions.items.newWorldSymphony.distance')
         },
         {
-          name: "Art Deco Historic District",
-          description: "Iconic neighborhood with colorful historic buildings and guided walking tours.",
-          distance: "10 min walk"
+          name: t('attractions.items.artDecoDistrict.name'),
+          description: t('attractions.items.artDecoDistrict.description'),
+          distance: t('attractions.items.artDecoDistrict.distance')
         },
         {
-          name: "Pérez Art Museum",
-          description: "Contemporary art museum with stunning architecture and waterfront views.",
-          distance: "25 min drive"
+          name: t('attractions.items.perezArtMuseum.name'),
+          description: t('attractions.items.perezArtMuseum.description'),
+          distance: t('attractions.items.perezArtMuseum.distance')
         }
       ]
     }
@@ -97,9 +100,9 @@ const LocalAttractions = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">Local Attractions</h2>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('attractions.title')}</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Discover the best beaches, restaurants, shopping, and entertainment options near our apartment.
+          {t('attractions.subtitle')}
         </p>
       </motion.div>
 
