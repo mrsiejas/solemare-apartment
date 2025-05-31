@@ -18,6 +18,7 @@ const ContactForm = () => {
   const [state, handleSubmit] = useForm("xovwaplo");
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
+  const [emailError, setEmailError] = useState('');
 
   // Get tomorrow's date for min check-in
   const tomorrow = new Date();
@@ -27,9 +28,24 @@ const ContactForm = () => {
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError(t('contact.form.emailError'));
+      return false;
+    }
+    setEmailError('');
+    return true;
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    const email = formData.get('email');
+
+    if (!validateEmail(email)) {
+      return;
+    }
 
     // Add dates to formData
     if (checkIn) formData.set('checkIn', checkIn.toISOString().split('T')[0]);
@@ -55,6 +71,11 @@ const ContactForm = () => {
   // Handle phone number input to allow only integers
   const handlePhoneInput = (e) => {
     e.target.value = e.target.value.replace(/[^\d]/g, '');
+  };
+
+  // Handle email input validation
+  const handleEmailInput = (e) => {
+    validateEmail(e.target.value);
   };
 
   return (
@@ -102,7 +123,13 @@ const ContactForm = () => {
                   type="email"
                   required
                   autoComplete="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  onInput={handleEmailInput}
+                  placeholder="example@email.com"
                 />
+                {emailError && (
+                  <p className="text-sm text-red-500">{emailError}</p>
+                )}
                 <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
 

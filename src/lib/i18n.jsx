@@ -150,7 +150,8 @@ const translations = {
                 checkOut: 'Data wyjazdu',
                 message: 'Wiadomość',
                 messagePlaceholder: 'Specjalne życzenia lub pytania?',
-                submit: 'Wyślij zapytanie'
+                submit: 'Wyślij zapytanie',
+                emailError: 'Wprowadź poprawny adres email'
             }
         }
     },
@@ -303,7 +304,8 @@ const translations = {
                 checkOut: 'Check-out Date',
                 message: 'Message',
                 messagePlaceholder: 'Any special requests or questions?',
-                submit: 'Send Inquiry'
+                submit: 'Send Inquiry',
+                emailError: 'Please enter a valid email address'
             }
         }
     }
