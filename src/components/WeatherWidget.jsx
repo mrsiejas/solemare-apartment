@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Cloud, CloudRain, CloudSnow, CloudSun, Sun } from 'lucide-react';
 
 const KATY_RYBACKIE = {
-    latitude: 54.3333,
-    longitude: 19.2500
+    latitude: 54.2000,
+    longitude: 19.1400
 };
 
 // Weather code mapping based on OpenMeteo documentation
