@@ -63,10 +63,11 @@ const ApartmentDetails = () => {
             <FeatureCard icon={<Users size={24} />} title={t('apartment.features.guests')} value="4" />
             <FeatureCard icon={<BedDouble size={24} />} title={t('apartment.features.beds')} value="2" />
             <FeatureCard icon={<Bath size={24} />} title={t('apartment.features.bathrooms')} value="1" />
-            <FeatureCard icon={<Maximize size={24} />} title={t('apartment.features.size')} value="39 m²" />
+            <FeatureCard icon={<Maximize size={24} />} title={t('apartment.features.size')} value="40 m²" />
           </div>
         </motion.div>
       </motion.div>
+
     </section>
   );
 };

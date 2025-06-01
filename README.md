@@ -19,7 +19,7 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
 - 🏖️ Local attractions guide
 - 📅 Google Calendar display showing booked dates with future AI workflow integration (planned)
 - 🌤️ Real-time weather information and forecasts for given location (planned)
-- 🤖 AI Chatbot Assistant powered by HuggingFace; LLM feed with info about the area
+- 🤖 Agentic AI workflow to automate the booking process
 
 ## Tech Stack
 
@@ -46,15 +46,21 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
 
 ```
 solemare-apartment/
-├── src/                    # Source files
-│   ├── components/        # React components
-│   ├── lib/              # Utility functions and libraries
-│   ├── App.jsx           # Main application component
-│   ├── main.jsx          # Application entry point
-│   └── index.css         # Global styles
-├── public/               # Static assets
+├── src/                 # Source files
+│   ├── components/      # React components
+│   ├── lib/             # Utility functions and libraries
+│   ├── App.jsx          # Main application component
+│   ├── main.jsx         # Application entry point
+│   └── index.css        # Global styles
+├── public/              # Static assets
 ├── dist/                # Build output
 └── configuration files  # Various config files
+```
+
+## Agentic AI Workflow
+
+```
+[Webhook] → [Google Calendar Check] → [Decision Node] → [Email Response] → [Calendar Update] → [Owner Notification]
 ```
 
 ## Getting Started

@@ -151,6 +151,8 @@ const translations = {
                 messagePlaceholder: 'Specjalne życzenia lub pytania?',
                 submit: 'Wyślij zapytanie',
                 emailError: 'Wprowadź poprawny adres email',
+                minStayError: 'Minimalny pobyt to 2 noce',
+                maxStayError: 'Maksymalny pobyt to 14 nocy',
                 success: {
                     title: 'Zapytanie wysłane!',
                     description: 'Otrzymaliśmy Twoje zapytanie i odpowiemy najszybciej jak to możliwe.'
@@ -312,6 +314,8 @@ const translations = {
                 messagePlaceholder: 'Any special requests or questions?',
                 submit: 'Send Inquiry',
                 emailError: 'Please enter a valid email address',
+                minStayError: 'Minimum stay is 2 nights',
+                maxStayError: 'Maximum stay is 14 nights',
                 success: {
                     title: 'Inquiry Sent!',
                     description: 'We\'ve received your inquiry and will get back to you shortly.'
@@ -327,7 +331,7 @@ const translations = {
 
 const LanguageContext = createContext();
 
-const useLanguage = () => {
+export const useLanguage = () => {
     const context = useContext(LanguageContext);
     if (!context) {
         throw new Error('useLanguage must be used within a LanguageProvider');
@@ -335,7 +339,7 @@ const useLanguage = () => {
     return context;
 };
 
-const useTranslation = () => {
+export const useTranslation = () => {
     const { language } = useLanguage();
 
     return (key) => {
@@ -363,6 +367,4 @@ export const LanguageProvider = ({ children }) => {
             {children}
         </LanguageContext.Provider>
     );
-};
-
-export { useLanguage, useTranslation }; 
+}; 

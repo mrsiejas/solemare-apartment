@@ -19,6 +19,7 @@ const ContactForm = () => {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const [emailError, setEmailError] = useState('');
+  const [dateError, setDateError] = useState('');
 
   // Get tomorrow's date for min check-in
   const tomorrow = new Date();
@@ -27,6 +28,39 @@ const ContactForm = () => {
   // Get max date (1 year from now)
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
+
+  const validateDates = (start, end) => {
+    if (!start || !end) return true;
+
+    const diffTime = Math.abs(end - start);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 2) {
+      setDateError(t('contact.form.minStayError'));
+      return false;
+    }
+    if (diffDays > 14) {
+      setDateError(t('contact.form.maxStayError'));
+      return false;
+    }
+
+    setDateError('');
+    return true;
+  };
+
+  const handleCheckInChange = (date) => {
+    setCheckIn(date);
+    if (checkOut) {
+      validateDates(date, checkOut);
+    }
+  };
+
+  const handleCheckOutChange = (date) => {
+    setCheckOut(date);
+    if (checkIn) {
+      validateDates(checkIn, date);
+    }
+  };
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -44,6 +78,10 @@ const ContactForm = () => {
     const email = formData.get('email');
 
     if (!validateEmail(email)) {
+      return;
+    }
+
+    if (!validateDates(checkIn, checkOut)) {
       return;
     }
 
@@ -169,7 +207,7 @@ const ContactForm = () => {
                 <div className="w-full">
                   <DatePicker
                     selected={checkIn}
-                    onChange={(date) => setCheckIn(date)}
+                    onChange={handleCheckInChange}
                     selectsStart
                     startDate={checkIn}
                     endDate={checkOut}
@@ -190,7 +228,7 @@ const ContactForm = () => {
                 <div className="w-full">
                   <DatePicker
                     selected={checkOut}
-                    onChange={(date) => setCheckOut(date)}
+                    onChange={handleCheckOutChange}
                     selectsEnd
                     startDate={checkIn}
                     endDate={checkOut}
@@ -203,6 +241,7 @@ const ContactForm = () => {
                     required
                   />
                 </div>
+                {dateError && <p className="text-sm text-red-500 mt-1">{dateError}</p>}
                 <ValidationError prefix="Check-out" field="checkOut" errors={state.errors} />
               </div>
             </div>
