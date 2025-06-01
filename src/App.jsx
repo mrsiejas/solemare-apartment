@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useToast } from '@/components/ui/use-toast';
 import { LanguageProvider } from '@/lib/i18n.jsx';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -14,7 +13,6 @@ import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
 const App = () => {
-  const { toast } = useToast();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {

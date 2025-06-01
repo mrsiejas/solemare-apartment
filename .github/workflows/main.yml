@@ -48,11 +48,11 @@ jobs:
           npx stylelint "src/**/*.css" "src/**/*.jsx" --fix
           npx stylelint "src/**/*.css" "src/**/*.jsx"
 
-      # # JavaScript linting
-      # - name: ESLint
-      #   run: |
-      #     npx eslint "js/*.js" --fix
-      #     npx eslint "js/*.js"
+      # JavaScript validation
+      - name: JavaScript Validation
+        run: |
+          npx eslint "src/**/*.{js,jsx}" --fix
+          npx eslint "src/**/*.{js,jsx}"
 
       # # Accessibility check
       # - name: Run Lighthouse CI
