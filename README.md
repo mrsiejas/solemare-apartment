@@ -33,9 +33,8 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
   - HTML validation
   - CSS linting (Stylelint)
   - JavaScript linting (ESLint)
-  - Security scanning (Snyk)
+  - Security scanning (npm audit)
   - Performance monitoring (Lighthouse)
-  - Accessibility testing
 - **APIs**: 
   - Google Maps
   - Google Calendar
