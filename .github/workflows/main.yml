@@ -73,40 +73,6 @@ jobs:
           branch: preview
         id: deploy
 
-      - name: Install Chrome dependencies
-        run: |
-          apt-get update
-          apt-get install -y \
-            libglib2.0-0 \
-            libnss3 \
-            libnspr4 \
-            libatk1.0-0 \
-            libatk-bridge2.0-0 \
-            libcups2 \
-            libdrm2 \
-            libxkbcommon0 \
-            libxcomposite1 \
-            libxdamage1 \
-            libxfixes3 \
-            libxrandr2 \
-            libgbm1 \
-            libasound2 \
-            libpango-1.0-0 \
-            libcairo2 \
-            libatspi2.0-0
-
-      - name: Run accessibility tests
-        run: |
-          npm install --save-dev --no-audit --no-fund axe-core puppeteer
-          echo ">> Checking accessibility on preview environment: ${{ steps.deploy.outputs.url }} <<"
-          PREVIEW_URL=${{ steps.deploy.outputs.url }} node scripts/accessibility-test.js
-
-      - name: Show Nicolas Cage on failure 🎭
-        if: failure()
-        run: |
-          echo "::error::Pipeline failed! Here's Nicolas Cage to cheer you up:"
-          cat public/cage.txt
-
   deploy-production:
     needs: quality
     if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
@@ -123,4 +89,9 @@ jobs:
           projectName: solemare-apartment
           directory: ./
           wranglerVersion: '3'
-          branch: main 
+          branch: main
+
+  show-nick:
+    needs: [quality, deploy-preview, deploy-production]
+    if: failure()
+    uses: ./.github/workflows/nick-on-failure.yml 
