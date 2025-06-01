@@ -35,8 +35,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
-          npm install --save-dev --legacy-peer-deps html-validate stylelint stylelint-config-standard eslint@8.56.0 eslint-config-standard@17.1.0
+          npm install --no-audit --no-fund
+          npm install --save-dev --no-audit --no-fund --legacy-peer-deps html-validate stylelint stylelint-config-standard eslint@8.56.0 eslint-config-standard@17.1.0
 
       # HTML validation
       - name: HTML Validation
@@ -53,14 +53,6 @@ jobs:
         run: |
           npx eslint "src/**/*.{js,jsx}" --fix
           npx eslint "src/**/*.{js,jsx}"
-
-      # # Accessibility check
-      # - name: Run Lighthouse CI
-      #   uses: treosh/lighthouse-ci-action@v10
-      #   with:
-      #     uploadArtifacts: true
-      #     temporaryPublicStorage: true
-      #     configPath: './lighthouse.config.js'
 
   deploy-preview:
     # needs: quality
@@ -79,6 +71,13 @@ jobs:
           directory: ./
           wranglerVersion: '3'
           branch: preview
+        id: deploy
+
+      - name: Run accessibility tests
+        run: |
+          npm install --save-dev --no-audit --no-fund axe-core puppeteer
+          echo ">> Checking accessibility on preview environment: ${{ steps.deploy.outputs.url }} <<"
+          PREVIEW_URL=${{ steps.deploy.outputs.url }} node scripts/accessibility-test.js
 
   deploy-production:
     needs: quality
