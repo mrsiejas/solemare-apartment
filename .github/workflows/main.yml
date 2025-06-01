@@ -38,6 +38,10 @@ jobs:
           npm install --no-audit --no-fund
           npm install --save-dev --no-audit --no-fund --legacy-peer-deps html-validate stylelint stylelint-config-standard eslint@8.56.0 eslint-config-standard@17.1.0
 
+      # Run npm audit for vulnerabilities
+      - name: Check for vulnerabilities with npm audit
+        run: npm audit --production --audit-level=moderate
+
       # HTML validation
       - name: HTML Validation
         run: npx html-validate index.html
