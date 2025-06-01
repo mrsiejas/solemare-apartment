@@ -1,0 +1,14 @@
+name: Nicolas Cage on Failure
+
+on:
+  workflow_call:
+
+jobs:
+  show-nick:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Nick 🎭
+        run: |
+          echo "::error::Pipeline failed! Here's Nicolas Cage to cheer you up:"
+          cat public/nick.txt 

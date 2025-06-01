@@ -80,6 +80,65 @@ solemare-apartment/
 
 ## Development
 
+### Prerequisites
+
+- Node.js (version specified in `.nvmrc`)
+- npm (comes with Node.js)
+- Git
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/solemare-apartment.git
+   cd solemare-apartment
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Testing GitHub Actions Workflows Locally
+
+You can test GitHub Actions workflows locally using `act`, a tool that allows you to run GitHub Actions locally:
+
+1. Install `act`:
+   ```bash
+   # Using Homebrew
+   brew install act
+   
+   # Or using the official installer
+   curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+   ```
+
+2. Run specific jobs:
+   ```bash
+   # Run the quality check job
+   act -j quality
+   
+   # Run a specific workflow
+   act workflow_dispatch -e .github/workflows/main.yml
+   ```
+
+3. Available workflows:
+   - `quality`: Runs code quality checks (HTML, CSS validation)
+   - `deploy-preview`: Deploys to preview environment
+   - `deploy-production`: Deploys to production environment
+
+Note: Some jobs might require environment variables. You can create a `.secrets` file in your project root to provide these:
+```bash
+CLOUDFLARE_API_TOKEN=your_token
+CLOUDFLARE_ACCOUNT_ID=your_account_id
+```
+
+### Environment Variables
+
 - Run locally using `npm run dev`
 - Build for production using `npm run build`
 - Push to any branch for automatic preview deployment

@@ -56,8 +56,8 @@ const Navbar = () => {
               <NavLink onClick={() => scrollToSection('amenities')}>{t('nav.amenities')}</NavLink>
               <NavLink onClick={() => scrollToSection('gallery')}>{t('nav.gallery')}</NavLink>
               <NavLink onClick={() => scrollToSection('availability')}>{t('nav.availability')}</NavLink>
-              <NavLink onClick={() => scrollToSection('location')}>{t('nav.location')}</NavLink>
               <NavLink onClick={() => scrollToSection('attractions')}>{t('nav.attractions')}</NavLink>
+              <NavLink onClick={() => scrollToSection('location')}>{t('nav.location')}</NavLink>
             </div>
           </div>
 
@@ -127,8 +127,8 @@ const Navbar = () => {
             <MobileNavLink onClick={() => scrollToSection('amenities')}>{t('nav.amenities')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('gallery')}>{t('nav.gallery')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('availability')}>{t('nav.availability')}</MobileNavLink>
-            <MobileNavLink onClick={() => scrollToSection('location')}>{t('nav.location')}</MobileNavLink>
             <MobileNavLink onClick={() => scrollToSection('attractions')}>{t('nav.attractions')}</MobileNavLink>
+            <MobileNavLink onClick={() => scrollToSection('location')}>{t('nav.location')}</MobileNavLink>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center justify-between px-5">

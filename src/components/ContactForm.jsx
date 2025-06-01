@@ -54,14 +54,14 @@ const ContactForm = () => {
     try {
       await handleSubmit(e);
       toast({
-        title: "Inquiry Sent!",
-        description: "We've received your inquiry and will get back to you shortly.",
+        title: t('contact.form.success.title'),
+        description: t('contact.form.success.description'),
         duration: 5000,
       });
     } catch (error) {
       toast({
-        title: "Error",
-        description: "There was an error sending your inquiry. Please try again.",
+        title: t('contact.form.error.title'),
+        description: t('contact.form.error.description'),
         variant: "destructive",
         duration: 5000,
       });
@@ -150,16 +150,17 @@ const ContactForm = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="guests">{t('contact.form.guests')}</Label>
-                <Input
+                <select
                   id="guests"
                   name="guests"
-                  type="number"
-                  min="1"
-                  max="4"
                   required
-                  defaultValue="1"
-                  placeholder="1-4"
-                />
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
                 <ValidationError prefix="Guests" field="guests" errors={state.errors} />
               </div>
 

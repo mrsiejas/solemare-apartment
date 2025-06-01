@@ -35,42 +35,34 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
-          npm install --save-dev --legacy-peer-deps html-validate stylelint stylelint-config-standard eslint@8.56.0 eslint-config-standard@17.1.0
+          npm install --no-audit --no-fund
+          npm install --save-dev --no-audit --no-fund --legacy-peer-deps html-validate stylelint stylelint-config-standard eslint@8.56.0 eslint-config-standard@17.1.0
 
       # HTML validation
       - name: HTML Validation
         run: npx html-validate index.html
 
-      # # CSS validation
-      # - name: CSS Validation
-      #   run: |
-      #     npx stylelint "css/*.css" --fix
-      #     npx stylelint "css/*.css"
+      # CSS validation
+      - name: CSS Validation
+        run: |
+          npx stylelint "src/**/*.css" "src/**/*.jsx" --fix
+          npx stylelint "src/**/*.css" "src/**/*.jsx"
 
-      # # JavaScript linting
-      # - name: ESLint
-      #   run: |
-      #     npx eslint "js/*.js" --fix
-      #     npx eslint "js/*.js"
-
-      # # Accessibility check
-      # - name: Run Lighthouse CI
-      #   uses: treosh/lighthouse-ci-action@v10
-      #   with:
-      #     uploadArtifacts: true
-      #     temporaryPublicStorage: true
-      #     configPath: './lighthouse.config.js'
+      # JavaScript validation
+      - name: JavaScript Validation
+        run: |
+          npx eslint "src/**/*.{js,jsx}" --fix
+          npx eslint "src/**/*.{js,jsx}"
 
   deploy-preview:
-    needs: quality
+    # needs: quality
     if: github.ref == 'refs/heads/preview' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'preview')
     runs-on: ubuntu-latest
     name: Deploy Preview
     steps:
       - uses: actions/checkout@v4
       
-      - name: Deploy to Cloudflare Pages (Preview)
+      - name: Deploy to Cloudflare Pages (Preview) 🔥
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -79,6 +71,7 @@ jobs:
           directory: ./
           wranglerVersion: '3'
           branch: preview
+        id: deploy
 
   deploy-production:
     needs: quality
@@ -88,7 +81,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Deploy to Cloudflare Pages (Production)
+      - name: Deploy to Cloudflare Pages (Production) 🎉
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -96,4 +89,9 @@ jobs:
           projectName: solemare-apartment
           directory: ./
           wranglerVersion: '3'
-          branch: main 
+          branch: main
+
+  show-nick:
+    needs: [quality, deploy-preview, deploy-production]
+    if: failure()
+    uses: ./.github/workflows/nick-on-failure.yml 

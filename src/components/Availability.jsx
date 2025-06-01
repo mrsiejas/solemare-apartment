@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 
 const Availability = () => {

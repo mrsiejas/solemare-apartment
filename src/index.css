@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,7 +25,7 @@
     --ring: 201 96% 32%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -54,6 +53,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -82,9 +82,19 @@
 
 .glass-card {
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .glass-card {
+    backdrop-filter: blur(8px);
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(8px)) {
+  .glass-card {
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 .attraction-card {
