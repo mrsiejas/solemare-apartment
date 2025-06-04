@@ -37,7 +37,7 @@ const ApartmentDetails = () => {
       >
         <motion.div
           variants={fadeInUp}
-          className="rounded-lg overflow-hidden shadow-xl relative group w-[450px] h-[400px] bg-gradient-to-br from-primary/10 to-background/30 flex flex-col items-center justify-center"
+          className="rounded-lg overflow-hidden shadow-xl relative group h-[400px] bg-gradient-to-br from-primary/10 to-background/30 flex flex-col items-center justify-center"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-background/30 mix-blend-overlay"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
