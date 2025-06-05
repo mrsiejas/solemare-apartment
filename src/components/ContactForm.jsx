@@ -87,6 +87,8 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
+    const message = formData.get('message')?.trim() || (language === 'pl' ? 'Brak' : 'None');
+
     // Prepare the data for n8n webhook
     const data = {
       name: formData.get('name'),
@@ -95,7 +97,7 @@ const ContactForm = () => {
       guests: formData.get('guests'),
       checkIn: checkIn ? checkIn.toISOString().split('T')[0] : null,
       checkOut: checkOut ? checkOut.toISOString().split('T')[0] : null,
-      message: formData.get('message') || 'none',
+      message: message,
       language: language
     };
 
@@ -273,13 +275,17 @@ const ContactForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message">{t('contact.form.message')}</Label>
+              <Label htmlFor="message" className="flex items-center gap-2">
+                {t('contact.form.message')}
+                <span className="text-sm text-gray-500">
+                  ({language === 'pl' ? 'opcjonalnie' : 'optional'})
+                </span>
+              </Label>
               <Textarea
                 id="message"
                 name="message"
                 placeholder={t('contact.form.messagePlaceholder')}
                 className="min-h-[100px]"
-                required
               />
             </div>
 
