@@ -6,8 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { useTranslation } from '@/lib/i18n';
-import { useForm, ValidationError } from '@formspree/react';
+import { useTranslation, useLanguage } from '@/lib/i18n';
 import DatePicker from 'react-datepicker';
 import { pl } from 'date-fns/locale';
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,7 +14,8 @@ import "react-datepicker/dist/react-datepicker.css";
 const ContactForm = () => {
   const { toast } = useToast();
   const t = useTranslation();
-  const [state, handleSubmit] = useForm("xovwaplo");
+  const { language } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const [emailError, setEmailError] = useState('');
@@ -103,19 +103,41 @@ const ContactForm = () => {
     };
 
     try {
-      await handleSubmit(e);
+      // Send to n8n webhook
+      const response = await fetch('https://n8n.izli.eu/webhook/40b6e331-ecd9-4966-aa5c-dc4d637d459c', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': '*/*'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Show success message
       toast({
         title: t('contact.form.success.title'),
         description: t('contact.form.success.description'),
         duration: 5000,
       });
+
+      // Reset form
+      e.target.reset();
+      setCheckIn(null);
+      setCheckOut(null);
     } catch (error) {
+      console.error('Error sending form:', error);
       toast({
         title: t('contact.form.error.title'),
         description: t('contact.form.error.description'),
         variant: "destructive",
         duration: 5000,
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -163,7 +185,6 @@ const ContactForm = () => {
                   required
                   autoComplete="name"
                 />
-                <ValidationError prefix="Name" field="name" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -181,7 +202,6 @@ const ContactForm = () => {
                 {emailError && (
                   <p className="text-sm text-red-500">{emailError}</p>
                 )}
-                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -196,7 +216,6 @@ const ContactForm = () => {
                   autoComplete="tel"
                   placeholder="123456789"
                 />
-                <ValidationError prefix="Phone" field="phone" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -212,7 +231,6 @@ const ContactForm = () => {
                   <option value="3">3</option>
                   <option value="4">4</option>
                 </select>
-                <ValidationError prefix="Guests" field="guests" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -233,7 +251,6 @@ const ContactForm = () => {
                     required
                   />
                 </div>
-                <ValidationError prefix="Check-in" field="checkIn" errors={state.errors} />
               </div>
 
               <div className="space-y-2">
@@ -255,7 +272,6 @@ const ContactForm = () => {
                   />
                 </div>
                 {dateError && <p className="text-sm text-red-500 mt-1">{dateError}</p>}
-                <ValidationError prefix="Check-out" field="checkOut" errors={state.errors} />
               </div>
             </div>
 
@@ -272,15 +288,14 @@ const ContactForm = () => {
                 placeholder={t('contact.form.messagePlaceholder')}
                 className="min-h-[100px]"
               />
-              <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
 
             <Button
               type="submit"
               className="w-full flex items-center justify-center gap-2"
-              disabled={state.submitting}
+              disabled={isSubmitting}
             >
-              {state.submitting ? (
+              {isSubmitting ? (
                 <>
                   <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full"></div>
                   <span>Sending...</span>
