@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, BedDouble, Bath, Maximize } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
+import WeatherWidget from './WeatherWidget';
 
 const ApartmentDetails = () => {
   const t = useTranslation();
@@ -36,18 +37,21 @@ const ApartmentDetails = () => {
       >
         <motion.div
           variants={fadeInUp}
-          className="rounded-lg overflow-hidden shadow-xl relative group aspect-square max-h-[500px] bg-gradient-to-br from-primary/10 to-background/30 flex items-center justify-center"
+          className="rounded-lg overflow-hidden shadow-xl relative group h-[400px] bg-gradient-to-br from-primary/10 to-background/30 flex flex-col items-center justify-center"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-background/30 mix-blend-overlay"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
           <motion.h2
-            className="text-6xl md:text-7xl font-bold text-primary/80 relative z-10"
+            className="text-3xl md:text-4xl font-bold text-primary/80 relative z-10 mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            {t('apartment.welcome')}
+            {t('apartment.weather')}
           </motion.h2>
+          <div className="relative z-10">
+            <WeatherWidget />
+          </div>
         </motion.div>
 
         <motion.div variants={fadeInUp}>
@@ -59,10 +63,11 @@ const ApartmentDetails = () => {
             <FeatureCard icon={<Users size={24} />} title={t('apartment.features.guests')} value="4" />
             <FeatureCard icon={<BedDouble size={24} />} title={t('apartment.features.beds')} value="2" />
             <FeatureCard icon={<Bath size={24} />} title={t('apartment.features.bathrooms')} value="1" />
-            <FeatureCard icon={<Maximize size={24} />} title={t('apartment.features.size')} value="39 m²" />
+            <FeatureCard icon={<Maximize size={24} />} title={t('apartment.features.size')} value="40 m²" />
           </div>
         </motion.div>
       </motion.div>
+
     </section>
   );
 };

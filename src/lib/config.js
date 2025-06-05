@@ -1,15 +1,15 @@
 // Environment variables
 export const config = {
-    GOOGLE_CALENDAR_ID: process.env.GOOGLE_CALENDAR_ID,
-    GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
-    // FORMSPREE_ID: process.env.FORMSPREE_ID // Uncomment when Formspree is set up
+    GOOGLE_CALENDAR_ID: import.meta.env.VITE_GOOGLE_CALENDAR_ID,
+    GOOGLE_MAPS_API_KEY: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    FORMSPREE_ID: import.meta.env.VITE_FORMSPREE_ID
 };
 
 // Validate environment variables
 const requiredEnvVars = [
-    'GOOGLE_CALENDAR_ID',
-    'GOOGLE_MAPS_API_KEY',
-    // 'FORMSPREE_ID' // Uncomment when Formspree is set up
+    'VITE_GOOGLE_CALENDAR_ID',
+    'VITE_GOOGLE_MAPS_API_KEY',
+    'VITE_FORMSPREE_ID'
 ];
 
 requiredEnvVars.forEach(envVar => {

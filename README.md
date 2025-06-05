@@ -19,7 +19,7 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
 - 🏖️ Local attractions guide
 - 📅 Google Calendar display showing booked dates with future AI workflow integration (planned)
 - 🌤️ Real-time weather information and forecasts for given location (planned)
-- 🤖 AI Chatbot Assistant powered by HuggingFace; LLM feed with info about the area
+- 🤖 Agentic AI workflow to automate the booking process
 
 ## Tech Stack
 
@@ -33,9 +33,8 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
   - HTML validation
   - CSS linting (Stylelint)
   - JavaScript linting (ESLint)
-  - Security scanning (Snyk)
+  - Security scanning (npm audit)
   - Performance monitoring (Lighthouse)
-  - Accessibility testing
 - **APIs**: 
   - Google Maps
   - Google Calendar
@@ -47,15 +46,21 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
 
 ```
 solemare-apartment/
-├── src/                    # Source files
-│   ├── components/        # React components
-│   ├── lib/              # Utility functions and libraries
-│   ├── App.jsx           # Main application component
-│   ├── main.jsx          # Application entry point
-│   └── index.css         # Global styles
-├── public/               # Static assets
+├── src/                 # Source files
+│   ├── components/      # React components
+│   ├── lib/             # Utility functions and libraries
+│   ├── App.jsx          # Main application component
+│   ├── main.jsx         # Application entry point
+│   └── index.css        # Global styles
+├── public/              # Static assets
 ├── dist/                # Build output
 └── configuration files  # Various config files
+```
+
+## Agentic AI Workflow
+
+```
+[Webhook] → [Google Calendar Check] → [Decision Node] → [Email Response] → [Calendar Update] → [Owner Notification]
 ```
 
 ## Getting Started
@@ -127,7 +132,7 @@ You can test GitHub Actions workflows locally using `act`, a tool that allows yo
    ```
 
 3. Available workflows:
-   - `quality`: Runs code quality checks (HTML, CSS validation)
+   - `quality`: Runs code quality checks (HTML, CSS validation, npm audit)
    - `deploy-preview`: Deploys to preview environment
    - `deploy-production`: Deploys to production environment
 
@@ -137,35 +142,51 @@ CLOUDFLARE_API_TOKEN=your_token
 CLOUDFLARE_ACCOUNT_ID=your_account_id
 ```
 
+## Deployment
+
+The project is deployed to Cloudflare Pages. The CI/CD pipeline handles deployments automatically based on pushes to the `preview` and `main` branches.
+
+### Cloudflare Pages Configuration
+
+Ensure the following build configurations are set in your Cloudflare Pages project settings:
+
+-   **Build command**: `npm run build`
+-   **Build output directory**: `dist`
+-   **Node.js version**: Consider setting the Node.js version (e.g., 20) to match your `.nvmrc` file for consistency.
+
 ### Environment Variables
 
-- Run locally using `npm run dev`
-- Build for production using `npm run build`
-- Push to any branch for automatic preview deployment
-- Push to main branch for automatic production deployment
-- Code quality checks run automatically on pull requests and main branch pushes
+Make sure to set the necessary environment variables in your Cloudflare Pages project settings for both `Production` and `Preview` environments. These variables are required for certain application functionalities.
 
-## Quality Assurance
+-   `GOOGLE_MAPS_API_KEY`
+-   `GOOGLE_CALENDAR_ID`
+-   `FORMSPREE_ID`
+-   `OPENWEATHERMAP_API_KEY`
 
-The project includes automated quality checks that run on every pull request and push to main:
+It is recommended to mark these variables as 'Encrypted' for security.
 
-- **Code Quality**:
-  - HTML validation
-  - CSS linting with Stylelint
-  - JavaScript linting with ESLint
+## Local Testing
 
-- **Security**:
-  - Vulnerability scanning with Snyk
-  - Dependency updates monitoring
+### Running Quality Checks Locally
 
-- **Performance**:
-  - Lighthouse CI for performance metrics
-  - Web Vitals monitoring
-  - Performance budget enforcement
+Before pushing your changes, you can run the quality checks locally to catch potential issues early. This requires having the necessary tools installed globally or within your project's `node_modules`.
 
-- **Accessibility**:
-  - Automated accessibility testing
-  - WCAG compliance checking
+-   **HTML Validation**: `npx html-validate index.html`
+-   **CSS Validation**: `npx stylelint "src/**/*.css" "src/**/*.jsx"`
+-   **JavaScript Validation**: `npx eslint "src/**/*.{js,jsx}"`
+-   **Dependency Vulnerability Scanning**: `npm audit --production --audit-level=moderate`
+
+### Running Accessibility Tests Locally
+
+You can run the accessibility tests locally after building your project. Navigate to the project root and run:
+
+```bash
+npm install
+npm run build
+node scripts/accessibility-test.js
+```
+
+Note: This requires Node.js and npm to be installed.
 
 ## Contributing
 
