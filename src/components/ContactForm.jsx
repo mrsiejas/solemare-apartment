@@ -87,6 +87,7 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
+    // Get message or set default based on language
     const message = formData.get('message')?.trim() || (language === 'pl' ? 'Brak' : 'None');
 
     // Prepare the data for n8n webhook
