@@ -150,6 +150,7 @@ const translations = {
                 message: 'Wiadomość',
                 messagePlaceholder: 'Specjalne życzenia lub pytania?',
                 submit: 'Wyślij zapytanie',
+                sending: 'Wysyłam',
                 emailError: 'Wprowadź poprawny adres email',
                 minStayError: 'Minimalny pobyt to 2 noce',
                 maxStayError: 'Maksymalny pobyt to 14 nocy',
@@ -313,6 +314,7 @@ const translations = {
                 message: 'Message',
                 messagePlaceholder: 'Any special requests or questions?',
                 submit: 'Send Inquiry',
+                sending: 'Sending',
                 emailError: 'Please enter a valid email address',
                 minStayError: 'Minimum stay is 2 nights',
                 maxStayError: 'Maximum stay is 14 nights',
@@ -356,6 +358,7 @@ export const useTranslation = () => {
 
 export const LanguageProvider = ({ children }) => {
     const [language, setLanguage] = useState('pl');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const changeLanguage = (newLang) => {
         setLanguage(newLang);
