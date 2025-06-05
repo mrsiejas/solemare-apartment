@@ -20,6 +20,7 @@ const ContactForm = () => {
   const [checkOut, setCheckOut] = useState(null);
   const [emailError, setEmailError] = useState('');
   const [dateError, setDateError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Get tomorrow's date for min check-in
   const tomorrow = new Date();
@@ -72,38 +73,153 @@ const ContactForm = () => {
     return true;
   };
 
+  // Function to send email notification using Formspree
+  const sendEmailNotification = async (email, subject, message) => {
+    try {
+      const notificationData = new FormData();
+      notificationData.append('email', email);
+      notificationData.append('subject', subject);
+      notificationData.append('message', message);
+
+      const response = await fetch('https://formspree.io/f/xovwaplo', {
+        method: 'POST',
+        body: notificationData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        console.error('Error sending notification:', await response.text());
+      }
+    } catch (error) {
+      console.error('Error sending notification:', error);
+    }
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(e.target);
     const email = formData.get('email');
 
     if (!validateEmail(email)) {
+      setIsSubmitting(false);
       return;
     }
 
     if (!validateDates(checkIn, checkOut)) {
+      setIsSubmitting(false);
       return;
     }
 
     // Add dates to formData
-    if (checkIn) formData.set('checkIn', checkIn.toISOString().split('T')[0]);
-    if (checkOut) formData.set('checkOut', checkOut.toISOString().split('T')[0]);
+    if (checkIn) {
+      const year = checkIn.getFullYear();
+      const month = String(checkIn.getMonth() + 1).padStart(2, '0');
+      const day = String(checkIn.getDate()).padStart(2, '0');
+      formData.set('checkIn', `${year}-${month}-${day}`);
+    }
+    if (checkOut) {
+      const year = checkOut.getFullYear();
+      const month = String(checkOut.getMonth() + 1).padStart(2, '0');
+      const day = String(checkOut.getDate()).padStart(2, '0');
+      formData.set('checkOut', `${year}-${month}-${day}`);
+    }
 
+    // Convert FormData to a plain object for n8n
+    const data = Object.fromEntries(formData.entries());
+
+    const n8nWebhookUrl = 'https://n8n.izli.eu/webhook/40b6e331-ecd9-4966-aa5c-dc4d637d459c';
+
+    // Send to n8n webhook
     try {
-      await handleSubmit(e);
-      toast({
-        title: t('contact.form.success.title'),
-        description: t('contact.form.success.description'),
-        duration: 5000,
+      const response = await fetch(n8nWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
       });
+
+      if (!response.ok) {
+        console.error('Failed to send form data to n8n:', response.status, response.statusText);
+        toast({
+          title: t('contact.form.error.title'),
+          description: `Failed to send to n8n: ${response.status}`,
+          variant: "destructive",
+          duration: 5000,
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Get the response from n8n
+      const responseData = await response.json();
+
+      // If the response contains alternative dates, send an email notification
+      if (responseData.alternativeDates) {
+        await sendEmailNotification(
+          email,
+          'Informacja o rezerwacji - Solemare Apartment',
+          responseData.alternativeDates
+        );
+      }
+
     } catch (error) {
+      console.error('Error sending form data to n8n:', error);
       toast({
         title: t('contact.form.error.title'),
-        description: t('contact.form.error.description'),
+        description: `Error sending to n8n: ${error.message}`,
         variant: "destructive",
         duration: 5000,
       });
+      setIsSubmitting(false);
+      return;
     }
+
+    // Send to Formspree
+    // To disable Formspree submission, comment out the following try-catch block
+    try {
+      // Create a new FormData instance for Formspree
+      const formspreeFormData = new FormData();
+      formspreeFormData.append('name', data.name);
+      formspreeFormData.append('email', data.email);
+      formspreeFormData.append('phone', data.phone);
+      formspreeFormData.append('guests', data.guests);
+      formspreeFormData.append('checkIn', data.checkIn);
+      formspreeFormData.append('checkOut', data.checkOut);
+      formspreeFormData.append('message', data.message || '');
+
+      // Submit to Formspree
+      const formspreeResponse = await fetch('https://formspree.io/f/xovwaplo', {
+        method: 'POST',
+        body: formspreeFormData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!formspreeResponse.ok) {
+        console.error('Error submitting to Formspree:', await formspreeResponse.text());
+      }
+    } catch (error) {
+      console.error('Error submitting form to Formspree:', error);
+      // We don't show error toast for Formspree as it's secondary
+    }
+
+    // Show success message and reset form
+    toast({
+      title: t('contact.form.success.title'),
+      description: t('contact.form.success.description'),
+      duration: 5000,
+    });
+    e.target.reset();
+    setCheckIn(null);
+    setCheckOut(null);
+    setEmailError('');
+    setDateError('');
+    setIsSubmitting(false);
   };
 
   // Handle phone number input to allow only integers
@@ -253,25 +369,20 @@ const ContactForm = () => {
                 name="message"
                 placeholder={t('contact.form.messagePlaceholder')}
                 className="min-h-[100px]"
-                required
               />
               <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
 
-            <Button
-              type="submit"
-              className="w-full flex items-center justify-center gap-2"
-              disabled={state.submitting}
-            >
-              {state.submitting ? (
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? (
                 <>
-                  <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full"></div>
-                  <span>Sending...</span>
+                  <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full mr-2"></div>
+                  {t('contact.form.sending')}
                 </>
               ) : (
                 <>
-                  <Send size={18} />
-                  <span>{t('contact.form.submit')}</span>
+                  <Send className="mr-2 h-4 w-4" />
+                  {t('contact.form.submit')}
                 </>
               )}
             </Button>
