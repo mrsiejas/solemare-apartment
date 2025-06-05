@@ -85,9 +85,22 @@ const ContactForm = () => {
       return;
     }
 
-    // Add dates to formData
-    if (checkIn) formData.set('checkIn', checkIn.toISOString().split('T')[0]);
-    if (checkOut) formData.set('checkOut', checkOut.toISOString().split('T')[0]);
+    setIsSubmitting(true);
+
+    // Get message or set default based on language
+    const message = formData.get('message')?.trim() || (language === 'pl' ? 'Brak' : 'None');
+
+    // Prepare the data for n8n webhook
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      guests: formData.get('guests'),
+      checkIn: checkIn ? checkIn.toISOString().split('T')[0] : null,
+      checkOut: checkOut ? checkOut.toISOString().split('T')[0] : null,
+      message: message,
+      language: language
+    };
 
     try {
       await handleSubmit(e);
@@ -247,13 +260,17 @@ const ContactForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message">{t('contact.form.message')}</Label>
+              <Label htmlFor="message" className="flex items-center gap-2">
+                {t('contact.form.message')}
+                <span className="text-sm text-gray-500">
+                  ({language === 'pl' ? 'opcjonalnie' : 'optional'})
+                </span>
+              </Label>
               <Textarea
                 id="message"
                 name="message"
                 placeholder={t('contact.form.messagePlaceholder')}
                 className="min-h-[100px]"
-                required
               />
               <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
