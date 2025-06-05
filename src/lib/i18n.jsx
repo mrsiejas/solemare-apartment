@@ -30,7 +30,7 @@ const translations = {
             title: 'Udogodnienia',
             subtitle: 'Wszystko, czego potrzebujesz do komfortowego pobytu',
             items: {
-                wifi: 'Darmowe Wi-Fi',
+                wifi: 'Wi-Fi',
                 tv: 'Smart TV',
                 parking: 'Parking',
                 coffee: 'Ekspres do kawy',
@@ -39,7 +39,7 @@ const translations = {
                 pool: 'Podgrzewany basen',
                 dishwasher: 'Zmywarka do naczyń',
                 gym: 'Siłownia na świeżym powietrzu',
-                security: 'System bezpieczeństwa'
+                melex: 'Transport Melexem na plażę'
             }
         },
         gallery: {
@@ -203,7 +203,7 @@ const translations = {
                 pool: 'Heated Swimming Pool',
                 dishwasher: 'Dishwasher',
                 gym: 'Outdoor Gym',
-                security: 'Security System'
+                melex: 'Electric cart transport to the beach'
             }
         },
         gallery: {

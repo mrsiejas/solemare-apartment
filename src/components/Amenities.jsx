@@ -10,7 +10,7 @@ import {
   Waves,
   UtensilsCrossed,
   Dumbbell,
-  Lock
+  Bus
 } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 
@@ -27,7 +27,7 @@ const Amenities = () => {
     { icon: <Waves size={24} />, name: t('amenities.items.pool') },
     { icon: <UtensilsCrossed size={24} />, name: t('amenities.items.dishwasher') },
     { icon: <Dumbbell size={24} />, name: t('amenities.items.gym') },
-    { icon: <Lock size={24} />, name: t('amenities.items.security') }
+    { icon: <Bus size={24} />, name: t('amenities.items.melex') }
   ];
 
   const containerVariants = {
