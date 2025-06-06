@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # Grant write permissions for contents to allow pushing tags and creating releases
+
 jobs:
   create-release:
     runs-on: ubuntu-latest
