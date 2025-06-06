@@ -28,7 +28,7 @@ const Location = () => {
         className="bg-white rounded-lg shadow-lg overflow-hidden h-[500px]"
       >
         <iframe
-          src={process.env.GOOGLE_MAPS_EMBED_URL}
+          src={import.meta.env.VITE_GOOGLE_MAPS_EMBED_URL}
           width="100%"
           height="450"
           style={{ border: 0 }}

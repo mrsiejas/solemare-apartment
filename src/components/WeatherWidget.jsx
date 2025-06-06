@@ -45,7 +45,7 @@ const WeatherWidget = () => {
                 };
 
                 const response = await fetch(
-                    `${process.env.WEATHER_API_URL}?${new URLSearchParams(params)}`
+                    `${import.meta.env.VITE_WEATHER_API_URL}?${new URLSearchParams(params)}`
                 );
 
                 if (!response.ok) {
