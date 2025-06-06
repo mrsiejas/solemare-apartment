@@ -11,56 +11,56 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      alt: "Apartament Solemare 46 - Sypialnia",
-      description: "Sypialnia z łóżkiem 2 osobowym",
+      alt: t('gallery.images.bedroom.alt'),
+      description: t('gallery.images.bedroom.description'),
       src: "/images/gallery/gallery_01.jpg"
     },
     {
       id: 2,
-      alt: "Apartament Solemare 46 - Łazienka",
-      description: "Łazienka z prysznicem i deszczownicą",
+      alt: t('gallery.images.bathroom1.alt'),
+      description: t('gallery.images.bathroom1.description'),
       src: "/images/gallery/gallery_02.jpg"
     },
     {
       id: 3,
-      alt: "Apartament Solemare 46 - Łazienka",
-      description: "Łazienka",
+      alt: t('gallery.images.bathroom2.alt'),
+      description: t('gallery.images.bathroom2.description'),
       src: "/images/gallery/gallery_03.jpg"
     },
     {
       id: 4,
-      alt: "Solemare Apartament 46 - Kuchnia",
-      description: "W  pełni wyposażona kuchnia: średnia lodówka, zmywarka, mikrofalówka i płyta indukcyjna",
+      alt: t('gallery.images.kitchen.alt'),
+      description: t('gallery.images.kitchen.description'),
       src: "/images/gallery/gallery_04.jpg"
     },
     {
       id: 5,
-      alt: "Solemare Apartament 46 - Korytarz",
-      description: "Wejście do mieszkania i korytarz",
+      alt: t('gallery.images.hallway.alt'),
+      description: t('gallery.images.hallway.description'),
       src: "/images/gallery/gallery_05.jpg"
     },
     {
       id: 6,
-      alt: "Solemare Apartament 46 - Duży pokój",
-      description: "Przestronny duży pokój z rozkładanym narożnikiem 2 osobowym",
+      alt: t('gallery.images.terrace.alt'),
+      description: t('gallery.images.terrace.description'),
       src: "/images/gallery/gallery_06.jpg"
     },
     {
       id: 7,
-      alt: "Solemare Apartament 46 - Basen i Parking",
-      description: "Podgrzewany basen i miejsce parkingowe",
+      alt: t('gallery.images.pool.alt'),
+      description: t('gallery.images.pool.description'),
       src: "/images/gallery/gallery_07.jpg"
     },
     {
       id: 8,
-      alt: "Solemare Apartament 46 - Widok na Zatokę Wiślaną",
-      description: "Widok na Zatokę Wiślaną z tarasu",
+      alt: t('gallery.images.view.alt'),
+      description: t('gallery.images.view.description'),
       src: "/images/gallery/gallery_08.jpg"
     },
     {
       id: 9,
-      alt: "Solemare Apartament 46 - Plaża w kątach",
-      description: "Plaża w Kątach Rybackich jesienią",
+      alt: t('gallery.images.beach.alt'),
+      description: t('gallery.images.beach.description'),
       src: "/images/gallery/gallery_09.jpg"
     }
   ];

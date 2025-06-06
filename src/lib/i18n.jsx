@@ -44,7 +44,45 @@ const translations = {
         },
         gallery: {
             title: 'Galeria',
-            subtitle: 'Zobacz nasz apartament'
+            subtitle: 'Zobacz nasz apartament',
+            images: {
+                bedroom: {
+                    alt: "Apartament Solemare 46 - Sypialnia",
+                    description: "Sypialnia z łóżkiem 2 osobowym"
+                },
+                bathroom1: {
+                    alt: "Apartament Solemare 46 - Łazienka",
+                    description: "Łazienka z prysznicem i deszczownicą"
+                },
+                bathroom2: {
+                    alt: "Apartament Solemare 46 - Łazienka",
+                    description: "Łazienka"
+                },
+                kitchen: {
+                    alt: "Solemare Apartament 46 - Kuchnia",
+                    description: "W pełni wyposażona kuchnia: średnia lodówka, zmywarka, mikrofalówka i płyta indukcyjna"
+                },
+                hallway: {
+                    alt: "Solemare Apartament 46 - Korytarz",
+                    description: "Wejście do mieszkania i korytarz"
+                },
+                terrace: {
+                    alt: "Solemare Apartament 46 - Taras",
+                    description: "Przestronny taras z krzesłami i stolikiem kawowym"
+                },
+                pool: {
+                    alt: "Solemare Apartament 46 - Basen i Parking",
+                    description: "Podgrzewany basen i miejsce parkingowe"
+                },
+                view: {
+                    alt: "Solemare Apartament 46 - Widok na Zatokę Wiślaną",
+                    description: "Widok na Zatokę Wiślaną z tarasu"
+                },
+                beach: {
+                    alt: "Solemare Apartament 46 - Plaża w kątach",
+                    description: "Plaża w Kątach Rybackich jesienią"
+                }
+            }
         },
         availability: {
             title: 'Sprawdź dostępność',
@@ -208,7 +246,45 @@ const translations = {
         },
         gallery: {
             title: 'Gallery',
-            subtitle: 'Take a look at our apartment'
+            subtitle: 'Take a look at our apartment',
+            images: {
+                bedroom: {
+                    alt: "Solemare Apartment 46 - Bedroom",
+                    description: "Bedroom with a double bed"
+                },
+                bathroom1: {
+                    alt: "Solemare Apartment 46 - Bathroom",
+                    description: "Bathroom with shower and rain shower"
+                },
+                bathroom2: {
+                    alt: "Solemare Apartment 46 - Bathroom",
+                    description: "Bathroom"
+                },
+                kitchen: {
+                    alt: "Solemare Apartment 46 - Kitchen",
+                    description: "Fully equipped kitchen: medium refrigerator, dishwasher, microwave, and induction hob"
+                },
+                hallway: {
+                    alt: "Solemare Apartment 46 - Hallway",
+                    description: "Apartment entrance and hallway"
+                },
+                terrace: {
+                    alt: "Solemare Apartment 46 - Terrace",
+                    description: "Spacious terrace with chairs and coffee table"
+                },
+                pool: {
+                    alt: "Solemare Apartment 46 - Pool and Parking",
+                    description: "Heated swimming pool and parking space"
+                },
+                view: {
+                    alt: "Solemare Apartment 46 - Vistula Lagoon View",
+                    description: "View of the Vistula Lagoon from the terrace"
+                },
+                beach: {
+                    alt: "Solemare Apartment 46 - Beach in Kąty",
+                    description: "Beach in Kąty Rybackie in autumn"
+                }
+            }
         },
         availability: {
             title: 'Check Availability',
