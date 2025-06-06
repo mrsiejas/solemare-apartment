@@ -17,6 +17,17 @@ export default defineConfig(({ mode }) => {
 		server: {
 			port: 5173,
 			open: true,
+			cors: {
+				origin: [
+					'http://localhost:5173',
+					'https://solemare-apartment.pages.dev',
+					'https://preview.solemare-apartment.pages.dev',
+					'https://katy-rybackie.izli.eu'
+				],
+				methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+				allowedHeaders: ['Content-Type', 'Authorization'],
+				credentials: true
+			}
 		},
 		build: {
 			outDir: 'dist',
