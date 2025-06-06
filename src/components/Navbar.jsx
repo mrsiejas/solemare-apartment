@@ -181,7 +181,7 @@ const Navbar = () => {
 
 const NavLink = ({ children, onClick }) => (
   <motion.button
-    className="text-gray-800 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+    className="text-gray-800 hover:text-primary px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
     onClick={onClick}
     whileTap={{ scale: 0.95 }}
   >
@@ -191,7 +191,7 @@ const NavLink = ({ children, onClick }) => (
 
 const MobileNavLink = ({ children, onClick }) => (
   <motion.button
-    className="text-gray-800 hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+    className="text-gray-800 hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left cursor-pointer"
     onClick={onClick}
     whileHover={{ backgroundColor: 'hsl(var(--primary) / 0.1)' }}
     whileTap={{ scale: 0.98 }}

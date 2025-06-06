@@ -30,11 +30,12 @@ const Availability = () => {
       >
         <div className="calendar-container">
           <iframe
-            src="https://calendar.google.com/calendar/embed?src=707af2fa11decccd6ba8415cd339e8ad33c32b03a37462b4e50ad02db48a7977%40group.calendar.google.com&ctz=Europe%2FWarsaw&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+            src={`https://calendar.google.com/calendar/embed?src=${process.env.GOOGLE_CALENDAR_ID}&ctz=Europe%2FWarsaw&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0`}
             style={{ border: 0 }}
-            width="800"
+            width="100%"
             height="600"
-            className="overflow-hidden"
+            frameBorder="0"
+            scrolling="no"
             title="Availability Calendar"
           ></iframe>
         </div>

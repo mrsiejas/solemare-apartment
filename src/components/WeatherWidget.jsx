@@ -45,7 +45,7 @@ const WeatherWidget = () => {
                 };
 
                 const response = await fetch(
-                    `https://api.open-meteo.com/v1/forecast?${new URLSearchParams(params)}`
+                    `${process.env.WEATHER_API_URL}?${new URLSearchParams(params)}`
                 );
 
                 if (!response.ok) {

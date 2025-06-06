@@ -28,12 +28,13 @@ const Location = () => {
         className="bg-white rounded-lg shadow-lg overflow-hidden h-[500px]"
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2326.244020818529!2d19.221306!3d54.334995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd3911e28dc331%3A0x760274dbad7fa175!2sApartamenty%20Solemare!5e0!3m2!1spl!2spl!4v1748501307773!5m2!1spl!2spl"
-          height="500"
+          src={process.env.GOOGLE_MAPS_EMBED_URL}
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-full"
           title="Mapa lokalizacji Apartamenty Solemare w Kątach Rybackich"
         ></iframe>
       </motion.div>

@@ -105,7 +105,7 @@ const ContactForm = () => {
 
     try {
       // Send to n8n webhook
-      const response = await fetch('https://n8n.izli.eu/webhook/40b6e331-ecd9-4966-aa5c-dc4d637d459c', {
+      const response = await fetch(process.env.N8N_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
