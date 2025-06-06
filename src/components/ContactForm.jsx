@@ -9,6 +9,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { useTranslation, useLanguage } from '@/lib/i18n';
 import DatePicker from 'react-datepicker';
 import { pl } from 'date-fns/locale';
+import { format } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
 
 const ContactForm = () => {
@@ -96,15 +97,15 @@ const ContactForm = () => {
       email: formData.get('email'),
       phone: formData.get('phone'),
       guests: formData.get('guests'),
-      checkIn: checkIn ? checkIn.toISOString().split('T')[0] : null,
-      checkOut: checkOut ? checkOut.toISOString().split('T')[0] : null,
+      checkIn: checkIn ? format(checkIn, 'yyyy-MM-dd') : null,
+      checkOut: checkOut ? format(checkOut, 'yyyy-MM-dd') : null,
       message: message,
       language: language
     };
 
     try {
       // Send to n8n webhook
-      const response = await fetch('https://n8n.izli.eu/webhook/40b6e331-ecd9-4966-aa5c-dc4d637d459c', {
+      const response = await fetch(process.env.N8N_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -298,7 +299,7 @@ const ContactForm = () => {
               {isSubmitting ? (
                 <>
                   <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full"></div>
-                  <span>Sending...</span>
+                  <span>{t('contact.form.sending')}</span>
                 </>
               ) : (
                 <>

@@ -18,7 +18,7 @@ const translations = {
         },
         apartment: {
             weather: 'Pogoda w Kątach',
-            description: 'Nasz apartament w Kątach Rybackich znajduje się na najwyższej kondygnacji z widokiem na Zatokę Wiślaną. Oferujemy komfortowe, 40-metrowe mieszkanie z klimatyzacją i prywatnym miejscem parkingowym.\n\nW budynku dostępne są: winda, podgrzewany basen oraz plac zabaw dla dzieci. W odległości 5 minut spacerem znajduje się plaża, sklepy, restauracje oraz rezerwat kormoranów. W odległości 15 minut spacerem znajduje się Krynica Morska.',
+            description: 'Nasz apartament w Kątach Rybackich znajduje się na najwyższej kondygnacji z widokiem na Zatokę Wiślaną. Oferujemy komfortowe, 40-metrowe mieszkanie z klimatyzacją i prywatnym miejscem parkingowym.\n\nW budynku dostępne są: winda, podgrzewany basen oraz plac zabaw dla dzieci. W odległości 25 minut spacerem znajduje się plaża, sklepy, restauracje oraz rezerwat kormoranów. W odległości 15 minut autem znajduje się Krynica Morska.',
             features: {
                 guests: 'Goście',
                 beds: 'Łóżka',
@@ -30,7 +30,7 @@ const translations = {
             title: 'Udogodnienia',
             subtitle: 'Wszystko, czego potrzebujesz do komfortowego pobytu',
             items: {
-                wifi: 'Darmowe Wi-Fi',
+                wifi: 'Wi-Fi',
                 tv: 'Smart TV',
                 parking: 'Parking',
                 coffee: 'Ekspres do kawy',
@@ -39,12 +39,50 @@ const translations = {
                 pool: 'Podgrzewany basen',
                 dishwasher: 'Zmywarka do naczyń',
                 gym: 'Siłownia na świeżym powietrzu',
-                security: 'System bezpieczeństwa'
+                melex: 'Transport Melexem na plażę'
             }
         },
         gallery: {
             title: 'Galeria',
-            subtitle: 'Zobacz nasz apartament'
+            subtitle: 'Zobacz nasz apartament',
+            images: {
+                bedroom: {
+                    alt: "Apartament Solemare 46 - Sypialnia",
+                    description: "Sypialnia z łóżkiem 2 osobowym"
+                },
+                bathroom1: {
+                    alt: "Apartament Solemare 46 - Łazienka",
+                    description: "Łazienka z prysznicem i deszczownicą"
+                },
+                bathroom2: {
+                    alt: "Apartament Solemare 46 - Łazienka",
+                    description: "Łazienka"
+                },
+                kitchen: {
+                    alt: "Solemare Apartament 46 - Kuchnia",
+                    description: "W pełni wyposażona kuchnia: średnia lodówka, zmywarka, mikrofalówka i płyta indukcyjna"
+                },
+                hallway: {
+                    alt: "Solemare Apartament 46 - Korytarz",
+                    description: "Wejście do mieszkania i korytarz"
+                },
+                terrace: {
+                    alt: "Solemare Apartament 46 - Taras",
+                    description: "Przestronny taras z krzesłami i stolikiem kawowym"
+                },
+                pool: {
+                    alt: "Solemare Apartament 46 - Basen i Parking",
+                    description: "Podgrzewany basen i miejsce parkingowe"
+                },
+                view: {
+                    alt: "Solemare Apartament 46 - Widok na Zatokę Wiślaną",
+                    description: "Widok na Zatokę Wiślaną z tarasu"
+                },
+                beach: {
+                    alt: "Solemare Apartament 46 - Plaża w kątach",
+                    description: "Plaża w Kątach Rybackich jesienią"
+                }
+            }
         },
         availability: {
             title: 'Sprawdź dostępność',
@@ -63,7 +101,7 @@ const translations = {
         location: {
             title: 'Lokalizacja',
             subtitle: 'Idealnie usytuowany w sercu Kątów Rybackich',
-            description: 'Nasz apartament znajduje się w samym sercu Kątów Rybackich, zapewniając łatwy dostęp do plaży i lokalnych atrakcji.',
+            description: 'Nasz apartament znajduje się w Kątach Rybackich między Zatoką Gdańską i Zalewem Wiślanym, zapewniając łatwy dostęp do plaży i lokalnych atrakcji.',
             distances: {
                 beach: '2 minuty spacerem do plaży',
                 restaurants: '5 minut do restauracji i sklepów',
@@ -126,8 +164,8 @@ const translations = {
                     distance: '150 m od apartamentu'
                 },
                 tristan: {
-                    name: 'Tristan Hotel & SPA',
-                    description: 'Hotel z restauracją i strefą SPA.',
+                    name: 'Restauracja Kobaltowa',
+                    description: 'Tristan Hotel Restauracja',
                     distance: '350 m od apartamentu'
                 },
                 sztutozeria: {
@@ -182,7 +220,7 @@ const translations = {
         },
         apartment: {
             weather: 'Weather in Kąty',
-            description: 'Our apartment in Kąty Rybackie is located on the top floor with a view of the Vistula Lagoon. We offer a comfortable, 40-square-meter apartment with air conditioning and private parking.\n\nAvailable in the building: elevator, heated swimming pool, and children\'s playground. Within a 5-minute walk, you\'ll find the beach, shops, restaurants, and the Cormorant Reserve. Krynica Morska is a 15-minute walk away.',
+            description: 'Our apartment in Kąty Rybackie is located on the top floor with a view of the Vistula Lagoon. We offer a comfortable, 40-square-meter apartment with air conditioning and private parking.\n\nAvailable in the building: elevator, heated swimming pool, and children\'s playground. Within a 25-minute walk, you\'ll find the beach, shops, restaurants, and the Cormorant Reserve. Krynica Morska is a 15-minute drive away.',
             features: {
                 guests: 'Guests',
                 beds: 'Beds',
@@ -203,12 +241,50 @@ const translations = {
                 pool: 'Heated Swimming Pool',
                 dishwasher: 'Dishwasher',
                 gym: 'Outdoor Gym',
-                security: 'Security System'
+                melex: 'Electric cart transport to the beach'
             }
         },
         gallery: {
             title: 'Gallery',
-            subtitle: 'Take a look at our apartment'
+            subtitle: 'Take a look at our apartment',
+            images: {
+                bedroom: {
+                    alt: "Solemare Apartment 46 - Bedroom",
+                    description: "Bedroom with a double bed"
+                },
+                bathroom1: {
+                    alt: "Solemare Apartment 46 - Bathroom",
+                    description: "Bathroom with shower and rain shower"
+                },
+                bathroom2: {
+                    alt: "Solemare Apartment 46 - Bathroom",
+                    description: "Bathroom"
+                },
+                kitchen: {
+                    alt: "Solemare Apartment 46 - Kitchen",
+                    description: "Fully equipped kitchen: medium refrigerator, dishwasher, microwave, and induction hob"
+                },
+                hallway: {
+                    alt: "Solemare Apartment 46 - Hallway",
+                    description: "Apartment entrance and hallway"
+                },
+                terrace: {
+                    alt: "Solemare Apartment 46 - Terrace",
+                    description: "Spacious terrace with chairs and coffee table"
+                },
+                pool: {
+                    alt: "Solemare Apartment 46 - Pool and Parking",
+                    description: "Heated swimming pool and parking space"
+                },
+                view: {
+                    alt: "Solemare Apartment 46 - Vistula Lagoon View",
+                    description: "View of the Vistula Lagoon from the terrace"
+                },
+                beach: {
+                    alt: "Solemare Apartment 46 - Beach in Kąty",
+                    description: "Beach in Kąty Rybackie in autumn"
+                }
+            }
         },
         availability: {
             title: 'Check Availability',
@@ -227,7 +303,7 @@ const translations = {
         location: {
             title: 'Location',
             subtitle: 'Perfectly situated in the heart of Kąty Rybackie',
-            description: 'Our apartment is perfectly situated in the heart of Kąty Rybackie, giving you easy access to the beach and local attractions.',
+            description: 'Our apartment is located in Kąty Rybackie between the Gdańsk Bay and the Vistula Lagoon, providing easy access to the beach and local attractions.',
             distances: {
                 beach: '2 minutes walk to the beach',
                 restaurants: '5 minutes to restaurants and shops',
@@ -290,8 +366,8 @@ const translations = {
                     distance: '150 m from the apartment'
                 },
                 tristan: {
-                    name: 'Tristan Hotel & SPA',
-                    description: 'Hotel with restaurant and SPA area.',
+                    name: 'Kobaltowa Restaurant',
+                    description: 'Tristan Hotel Restaurant',
                     distance: '350 m from the apartment'
                 },
                 sztutozeria: {

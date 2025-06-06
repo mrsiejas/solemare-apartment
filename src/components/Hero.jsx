@@ -86,7 +86,7 @@ const Hero = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white"
+          className="rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors"
           onClick={scrollToApartment}
         >
           <ArrowDown size={24} />
