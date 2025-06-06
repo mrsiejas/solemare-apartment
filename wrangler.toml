@@ -1,8 +1,6 @@
 name = "solemare-apartment"
 pages_build_output_dir = "./dist"
 
-[vars]
-VITE_N8N_WEBHOOK_URL = ""
-VITE_GOOGLE_CALENDAR_ID = ""
-VITE_WEATHER_API_URL = ""
-VITE_GOOGLE_MAPS_EMBED_URL = ""
+[build]
+command = "npm install && npm run build"
+output_dir = "/dist"
