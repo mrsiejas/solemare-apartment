@@ -18,7 +18,7 @@ const translations = {
         },
         apartment: {
             weather: 'Pogoda w Kątach',
-            description: 'Nasz apartament w Kątach Rybackich znajduje się na najwyższej kondygnacji z widokiem na Zatokę Wiślaną. Oferujemy komfortowe, 40-metrowe mieszkanie z klimatyzacją i prywatnym miejscem parkingowym.\n\nW budynku dostępne są: winda, podgrzewany basen oraz plac zabaw dla dzieci. W odległości 5 minut spacerem znajduje się plaża, sklepy, restauracje oraz rezerwat kormoranów. W odległości 15 minut spacerem znajduje się Krynica Morska.',
+            description: 'Nasz apartament w Kątach Rybackich znajduje się na najwyższej kondygnacji z widokiem na Zatokę Wiślaną. Oferujemy komfortowe, 40-metrowe mieszkanie z klimatyzacją i prywatnym miejscem parkingowym.\n\nW budynku dostępne są: winda, podgrzewany basen oraz plac zabaw dla dzieci. W odległości 25 minut spacerem znajduje się plaża, sklepy, restauracje oraz rezerwat kormoranów. W odległości 15 minut autem znajduje się Krynica Morska.',
             features: {
                 guests: 'Goście',
                 beds: 'Łóżka',
@@ -101,7 +101,7 @@ const translations = {
         location: {
             title: 'Lokalizacja',
             subtitle: 'Idealnie usytuowany w sercu Kątów Rybackich',
-            description: 'Nasz apartament znajduje się w samym sercu Kątów Rybackich, zapewniając łatwy dostęp do plaży i lokalnych atrakcji.',
+            description: 'Nasz apartament znajduje się w Kątach Rybackich między Zatoką Gdańską i Zalewem Wiślanym, zapewniając łatwy dostęp do plaży i lokalnych atrakcji.',
             distances: {
                 beach: '2 minuty spacerem do plaży',
                 restaurants: '5 minut do restauracji i sklepów',
@@ -164,8 +164,8 @@ const translations = {
                     distance: '150 m od apartamentu'
                 },
                 tristan: {
-                    name: 'Tristan Hotel & SPA',
-                    description: 'Hotel z restauracją i strefą SPA.',
+                    name: 'Restauracja Kobaltowa',
+                    description: 'Tristan Hotel Restauracja',
                     distance: '350 m od apartamentu'
                 },
                 sztutozeria: {
@@ -220,7 +220,7 @@ const translations = {
         },
         apartment: {
             weather: 'Weather in Kąty',
-            description: 'Our apartment in Kąty Rybackie is located on the top floor with a view of the Vistula Lagoon. We offer a comfortable, 40-square-meter apartment with air conditioning and private parking.\n\nAvailable in the building: elevator, heated swimming pool, and children\'s playground. Within a 5-minute walk, you\'ll find the beach, shops, restaurants, and the Cormorant Reserve. Krynica Morska is a 15-minute walk away.',
+            description: 'Our apartment in Kąty Rybackie is located on the top floor with a view of the Vistula Lagoon. We offer a comfortable, 40-square-meter apartment with air conditioning and private parking.\n\nAvailable in the building: elevator, heated swimming pool, and children\'s playground. Within a 25-minute walk, you\'ll find the beach, shops, restaurants, and the Cormorant Reserve. Krynica Morska is a 15-minute drive away.',
             features: {
                 guests: 'Guests',
                 beds: 'Beds',
@@ -303,7 +303,7 @@ const translations = {
         location: {
             title: 'Location',
             subtitle: 'Perfectly situated in the heart of Kąty Rybackie',
-            description: 'Our apartment is perfectly situated in the heart of Kąty Rybackie, giving you easy access to the beach and local attractions.',
+            description: 'Our apartment is located in Kąty Rybackie between the Gdańsk Bay and the Vistula Lagoon, providing easy access to the beach and local attractions.',
             distances: {
                 beach: '2 minutes walk to the beach',
                 restaurants: '5 minutes to restaurants and shops',
@@ -366,8 +366,8 @@ const translations = {
                     distance: '150 m from the apartment'
                 },
                 tristan: {
-                    name: 'Tristan Hotel & SPA',
-                    description: 'Hotel with restaurant and SPA area.',
+                    name: 'Kobaltowa Restaurant',
+                    description: 'Tristan Hotel Restaurant',
                     distance: '350 m from the apartment'
                 },
                 sztutozeria: {
