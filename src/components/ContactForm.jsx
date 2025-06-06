@@ -105,7 +105,7 @@ const ContactForm = () => {
 
     try {
       // Send to n8n webhook
-      const response = await fetch(process.env.N8N_WEBHOOK_URL, {
+      const response = await fetch(import.meta.env.VITE_N8N_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -30,7 +30,7 @@ const Availability = () => {
       >
         <div className="calendar-container">
           <iframe
-            src={`https://calendar.google.com/calendar/embed?src=${process.env.GOOGLE_CALENDAR_ID}&ctz=Europe%2FWarsaw&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0`}
+            src={`https://calendar.google.com/calendar/embed?src=${import.meta.env.VITE_GOOGLE_CALENDAR_ID}&ctz=Europe%2FWarsaw&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0`}
             style={{ border: 0 }}
             width="100%"
             height="600"

@@ -23,10 +23,11 @@ export default defineConfig(({ mode }) => {
 			sourcemap: true,
 		},
 		define: {
-			'process.env.N8N_WEBHOOK_URL': JSON.stringify(env.N8N_WEBHOOK_URL),
-			'process.env.GOOGLE_CALENDAR_ID': JSON.stringify(env.GOOGLE_CALENDAR_ID),
-			'process.env.WEATHER_API_URL': JSON.stringify(env.WEATHER_API_URL || 'https://api.open-meteo.com/v1/forecast'),
-			'process.env.GOOGLE_MAPS_EMBED_URL': JSON.stringify(env.GOOGLE_MAPS_EMBED_URL),
+			// Prefix all environment variables with VITE_ to make them available in the client
+			'import.meta.env.VITE_N8N_WEBHOOK_URL': JSON.stringify(env.VITE_N8N_WEBHOOK_URL),
+			'import.meta.env.VITE_GOOGLE_CALENDAR_ID': JSON.stringify(env.VITE_GOOGLE_CALENDAR_ID),
+			'import.meta.env.VITE_WEATHER_API_URL': JSON.stringify(env.VITE_WEATHER_API_URL || 'https://api.open-meteo.com/v1/forecast'),
+			'import.meta.env.VITE_GOOGLE_MAPS_EMBED_URL': JSON.stringify(env.VITE_GOOGLE_MAPS_EMBED_URL),
 		},
 	};
 });
