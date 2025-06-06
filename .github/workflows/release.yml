@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # Grant write permissions for contents to allow pushing tags and creating releases
+
 jobs:
   create-release:
     runs-on: ubuntu-latest
@@ -22,7 +25,9 @@ jobs:
 
       - name: Get package version
         id: get_version
-        run: echo "VERSION=$(node -p \"require('./package.json').version\")" >> $GITHUB_OUTPUT
+        run: |
+          VERSION_NUMBER=$(node -e "console.log(require('./package.json').version)")
+          echo "VERSION=$VERSION_NUMBER" >> $GITHUB_OUTPUT
 
       - name: Create and push tag
         run: |
