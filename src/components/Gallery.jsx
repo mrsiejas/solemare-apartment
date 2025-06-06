@@ -155,16 +155,16 @@ const Gallery = () => {
               className="relative max-w-4xl w-full mx-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-4 right-4 text-white hover:bg-white/20"
-                onClick={closeLightbox}
-              >
-                <X size={24} />
-              </Button>
-
               <div className="relative">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
+                  onClick={closeLightbox}
+                >
+                  <X size={24} />
+                </Button>
+
                 <img
                   alt={images[selectedImage].alt}
                   className="w-full h-auto max-h-[80vh] object-contain"
