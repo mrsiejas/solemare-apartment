@@ -2,15 +2,6 @@
 
 This directory contains n8n workflows used in the Solemare Apartment project.
 
-## Directory Structure
-
-```
-n8n/
-├── workflows/           # n8n workflow files
-│   └── booking-assistant.json  # AI-powered booking assistant workflow
-└── README.md           # This file
-```
-
 ## Workflows
 
 ### Booking Assistant

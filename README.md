@@ -211,7 +211,7 @@ The workflow file is located in `n8n/workflows/booking-assistant.json`.
 
 ### Installation
 
-1. Install n8n CLI following the [official installation guide](https://docs.n8n.io/hosting/installation/cli/)
+1. Install n8n CLI following the [official installation guide](https://docs.n8n.io/hosting/installation/npm/)
 
 2. Import the workflow:
    ```bash
