@@ -13,7 +13,7 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
 - 🌐 Bilingual support (Polish/English)
 - 📍 Google Maps integration
 - 📅 Google Calendar availability
-- 📝 Contact form with Formspree
+- 📝 Contact form with n8n webhook integration
 - 🎨 Modern, responsive design with Tailwind CSS
 - 🖼️ Image gallery
 - 🏖️ Local attractions guide
@@ -38,7 +38,7 @@ Built with React, Vite, and Tailwind CSS, deployed on Cloudflare Pages.
 - **APIs**: 
   - Google Maps
   - Google Calendar
-  - Formspree
+  - n8n Webhook
   - OpenWeatherMap (planned)
 - **Version Control**: Git/GitHub
 
@@ -78,7 +78,7 @@ solemare-apartment/
    - Production environment (main branch):
      - `GOOGLE_MAPS_API_KEY`
      - `GOOGLE_CALENDAR_ID`
-     - `FORMSPREE_ID`
+     - `N8N_WEBHOOK_URL`
    - Preview environment (all other branches):
      - Same variables as production
    - `OPENWEATHERMAP_API_KEY` (for future use)
@@ -160,7 +160,7 @@ Make sure to set the necessary environment variables in your Cloudflare Pages pr
 
 -   `GOOGLE_MAPS_API_KEY`
 -   `GOOGLE_CALENDAR_ID`
--   `FORMSPREE_ID`
+-   `N8N_WEBHOOK_URL`
 -   `OPENWEATHERMAP_API_KEY`
 
 It is recommended to mark these variables as 'Encrypted' for security.
@@ -195,6 +195,65 @@ Note: This requires Node.js and npm to be installed.
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
+
+## n8n Workflow Integration
+
+The project includes an AI-powered booking assistant workflow for n8n. This workflow handles the contact form submissions and automates the booking process.
+
+### Workflow Location
+The workflow file is located in `n8n/workflows/booking-assistant.json`.
+
+### Prerequisites
+- n8n instance (self-hosted or cloud)
+- OpenAI API key
+- Google Calendar API credentials
+- A Google Calendar for managing bookings
+
+### Installation
+
+1. Install n8n CLI following the [official installation guide](https://docs.n8n.io/hosting/installation/npm/)
+
+2. Import the workflow:
+   ```bash
+   # Using n8n CLI
+   n8n import --input=n8n/workflows/booking-assistant.json
+
+   # Or manually through n8n UI:
+   # 1. Go to your n8n instance
+   # 2. Click "Workflows" in the sidebar
+   # 3. Click "Import from File"
+   # 4. Select the booking-assistant.json file
+   ```
+
+3. Configure the workflow:
+   - Replace `YOUR_OPENAI_CREDENTIALS_ID` with your OpenAI API credentials
+   - Replace `YOUR_GOOGLE_CALENDAR_CREDENTIALS_ID` with your Google Calendar credentials
+   - Replace `YOUR_CALENDAR_ID` with your Google Calendar ID
+   - Update the webhook URL in your frontend application to match the new webhook URL
+
+4. Activate the workflow in n8n
+
+### Workflow Features
+- AI-powered booking assistant
+- Automatic calendar availability checking
+- Bilingual support (Polish/English)
+- Customizable booking rules
+- Email notifications
+
+### Testing the Workflow
+You can test the workflow by sending a POST request to the webhook URL with the following structure:
+```json
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "phone": "123456789",
+  "guests": "2",
+  "checkIn": "2024-04-01",
+  "checkOut": "2024-04-05",
+  "message": "Test booking",
+  "language": "en"
+}
+```
 
 ## License
 
