@@ -22,10 +22,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Configure Git
+        run: |
+          git config --global --add safe.directory /__w/solemare-apartment/solemare-apartment
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Debug
+        run: |
+          pwd
+          ls -la
+          git status
+          git log -1
+
       - name: Install dependencies
         run: npm ci
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release 
+        run: npx semantic-release
