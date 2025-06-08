@@ -41,27 +41,27 @@ const Gallery = () => {
     },
     {
       id: 6,
+      alt: t('gallery.images.beach.alt'),
+      description: t('gallery.images.beach.description'),
+      src: "/images/gallery/gallery_09.jpg"
+    },
+    {
+      id: 7,
       alt: t('gallery.images.terrace.alt'),
       description: t('gallery.images.terrace.description'),
       src: "/images/gallery/gallery_06.jpg"
     },
     {
-      id: 7,
+      id: 8,
       alt: t('gallery.images.pool.alt'),
       description: t('gallery.images.pool.description'),
       src: "/images/gallery/gallery_07.jpg"
     },
     {
-      id: 8,
+      id: 9,
       alt: t('gallery.images.view.alt'),
       description: t('gallery.images.view.description'),
       src: "/images/gallery/gallery_08.jpg"
-    },
-    {
-      id: 9,
-      alt: t('gallery.images.beach.alt'),
-      description: t('gallery.images.beach.description'),
-      src: "/images/gallery/gallery_09.jpg"
     }
   ];
 

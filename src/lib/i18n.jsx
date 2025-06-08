@@ -80,7 +80,7 @@ const translations = {
                 },
                 beach: {
                     alt: "Solemare Apartament 46 - Plaża w kątach",
-                    description: "Plaża w Kątach Rybackich jesienią"
+                    description: "Duży pokój i przesteń jadalniana"
                 }
             }
         },
@@ -282,7 +282,7 @@ const translations = {
                 },
                 beach: {
                     alt: "Solemare Apartment 46 - Beach in Kąty",
-                    description: "Beach in Kąty Rybackie in autumn"
+                    description: "Large room and dining area"
                 }
             }
         },
