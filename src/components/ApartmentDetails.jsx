@@ -37,12 +37,23 @@ const ApartmentDetails = () => {
       >
         <motion.div
           variants={fadeInUp}
-          className="rounded-lg overflow-hidden shadow-xl relative group h-[400px] bg-gradient-to-br from-primary/10 to-background/30 flex flex-col items-center justify-center"
+          className="rounded-lg overflow-hidden shadow-xl relative group h-[400px] flex flex-col items-center justify-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-background/30 mix-blend-overlay"></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'url("/images/plaza_katy.jpg")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: '0.5'
+            }}
+          ></div>
+
+          <div className="absolute inset-0 bg-primary/80"></div>
+
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-primary/80 relative z-10 mb-6"
+            className="text-3xl md:text-4xl font-bold text-white relative z-10 mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}

@@ -64,8 +64,8 @@ const WeatherWidget = () => {
         fetchWeather();
     }, []);
 
-    if (loading) return <div className="text-primary/80">Loading weather...</div>;
-    if (error) return <div className="text-primary/80">Error loading weather: {error}</div>;
+    if (loading) return <div className="text-white">Loading weather...</div>;
+    if (error) return <div className="text-white">Error loading weather: {error}</div>;
     if (!weatherData) return null;
 
     return (
@@ -73,13 +73,13 @@ const WeatherWidget = () => {
             <div className="flex gap-6 items-center">
                 {weatherData.daily.time.slice(0, 5).map((date, index) => (
                     <div key={date} className="flex flex-col items-center">
-                        <div className="text-sm text-primary/80">
+                        <div className="text-sm text-white">
                             {new Date(date).toLocaleDateString('pl-PL', { weekday: 'short' })}
                         </div>
-                        <div className="text-primary/80 my-1">
+                        <div className="text-white my-1">
                             {getWeatherIcon(weatherData.daily.weather_code[index])}
                         </div>
-                        <div className="text-lg text-primary/80">
+                        <div className="text-lg text-white">
                             {Math.round(weatherData.daily.temperature_2m_max[index])}°
                         </div>
                     </div>
