@@ -93,9 +93,7 @@ const translations = {
                 minStay: 'Minimalny pobyt: 2 noce',
                 checkIn: 'Czas zameldowania: 14:00',
                 checkOut: 'Czas wymeldowania: 11:00',
-                deposit: 'Wymagana zaliczka 50% do potwierdzenia rezerwacji',
-                payment: 'Pełna płatność wymagana 5 dni przed przyjazdem',
-                cancellation: 'Polityka anulowania: Pełny zwrot w przypadku anulowania 7 dni przed przyjazdem'
+                price: 'Cena: 225 PLN za dobę'
             }
         },
         location: {
@@ -293,11 +291,9 @@ const translations = {
             bookingInfo: {
                 title: 'Booking Information',
                 minStay: 'Minimum stay: 2 nights',
-                checkIn: 'Check-in time: 2:00 PM',
-                checkOut: 'Check-out time: 11:00 AM',
-                deposit: '50% deposit required to secure booking',
-                payment: 'Full payment due 5 days before arrival',
-                cancellation: 'Cancellation policy: Full refund if cancelled 7 days before arrival'
+                checkIn: 'Check-in time: 14:00',
+                checkOut: 'Check-out time: 11:00',
+                price: 'Price: 225 PLN per day'
             }
         },
         location: {

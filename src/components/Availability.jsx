@@ -58,8 +58,7 @@ const Availability = () => {
               <li>• {t('availability.bookingInfo.minStay')}</li>
               <li>• {t('availability.bookingInfo.checkIn')}</li>
               <li>• {t('availability.bookingInfo.checkOut')}</li>
-              <li>• {t('availability.bookingInfo.payment')}</li>
-              <li>• {t('availability.bookingInfo.cancellation')}</li>
+              <li>• {t('availability.bookingInfo.price')}</li>
             </ul>
           </div>
         </div>
