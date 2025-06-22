@@ -257,4 +257,28 @@ You can test the workflow by sending a POST request to the webhook URL with the 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details. 
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Contact Form Provider Toggle
+
+The contact form supports two providers: n8n webhook and Formspree. You can control which provider is used via the environment variable `VITE_CONTACT_FORM_PROVIDER`.
+
+- If `VITE_CONTACT_FORM_PROVIDER` is set to `n8n`, the form will POST to the n8n webhook URL (`VITE_N8N_WEBHOOK_URL`).
+- If `VITE_CONTACT_FORM_PROVIDER` is set to `formspree` or is not set, the form will POST to Formspree (`VITE_FORMSPREE_ENDPOINT`, default: `https://formspree.io/f/xovwaplo`).
+
+### Required Environment Variables
+
+- `VITE_CONTACT_FORM_PROVIDER` (optional, values: `n8n` or `formspree`, default: `formspree`)
+- `VITE_N8N_WEBHOOK_URL` (required if using n8n)
+- `VITE_FORMSPREE_ENDPOINT` (optional, defaults to `https://formspree.io/f/xovwaplo`)
+
+Example usage:
+```env
+# For n8n
+VITE_CONTACT_FORM_PROVIDER=n8n
+VITE_N8N_WEBHOOK_URL=https://your-n8n-instance/webhook/your-id
+
+# For Formspree (default)
+# VITE_CONTACT_FORM_PROVIDER=formspree
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+``` 
