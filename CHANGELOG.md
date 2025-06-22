@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/mrsiejas/solemare-apartment/compare/v0.1.1...v0.2.0) (2025-06-22)
+
+
+### Features
+
+* reincarnate formspree and make it default, n8n is optional (env vars) ([eed678d](https://github.com/mrsiejas/solemare-apartment/commit/eed678d3f59a6da868d84451f4e2349f92d607fb))
+
 ## [0.1.1](https://github.com/mrsiejas/solemare-apartment/compare/v0.1.0...v0.1.1) (2025-06-08)
 
 
