@@ -30,6 +30,10 @@ const ContactForm = () => {
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
 
+  const provider = import.meta.env.VITE_CONTACT_FORM_PROVIDER || 'formspree';
+  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xovwaplo';
+  const n8nEndpoint = import.meta.env.VITE_N8N_WEBHOOK_URL;
+
   const validateDates = (start, end) => {
     if (!start || !end) return true;
 
@@ -88,10 +92,8 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    // Get message or set default based on language
     const message = formData.get('message')?.trim() || (language === 'pl' ? 'Brak' : 'None');
 
-    // Prepare the data for n8n webhook
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
@@ -104,28 +106,43 @@ const ContactForm = () => {
     };
 
     try {
-      // Send to n8n webhook
-      const response = await fetch(import.meta.env.VITE_N8N_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': '*/*'
-        },
-        body: JSON.stringify(data)
-      });
-
+      let response;
+      if (provider === 'n8n' && n8nEndpoint) {
+        response = await fetch(n8nEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*'
+          },
+          body: JSON.stringify(data)
+        });
+      } else {
+        // Default: Formspree
+        const formspreeFormData = new FormData();
+        formspreeFormData.append('name', data.name);
+        formspreeFormData.append('email', data.email);
+        formspreeFormData.append('phone', data.phone);
+        formspreeFormData.append('guests', data.guests);
+        formspreeFormData.append('checkIn', data.checkIn);
+        formspreeFormData.append('checkOut', data.checkOut);
+        formspreeFormData.append('message', data.message);
+        formspreeFormData.append('language', data.language);
+        response = await fetch(formspreeEndpoint, {
+          method: 'POST',
+          body: formspreeFormData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+      }
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-
-      // Show success message
       toast({
         title: t('contact.form.success.title'),
         description: t('contact.form.success.description'),
         duration: 5000,
       });
-
-      // Reset form
       e.target.reset();
       setCheckIn(null);
       setCheckOut(null);
