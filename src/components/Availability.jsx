@@ -59,6 +59,7 @@ const Availability = () => {
               <li>• {t('availability.bookingInfo.checkIn')}</li>
               <li>• {t('availability.bookingInfo.checkOut')}</li>
               <li>• {t('availability.bookingInfo.price')}</li>
+              <li>• {t('availability.bookingInfo.noAnimals')}</li>
             </ul>
           </div>
         </div>
