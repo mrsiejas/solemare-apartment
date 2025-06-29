@@ -9,7 +9,6 @@ import Gallery from '@/components/Gallery';
 import Availability from '@/components/Availability';
 import Location from '@/components/Location';
 import LocalAttractions from '@/components/LocalAttractions';
-import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
 const App = () => {
@@ -59,8 +58,6 @@ const App = () => {
             <Location />
 
             <div className="section-divider" />
-
-            <ContactForm />
           </div>
 
           <Footer />

@@ -86,15 +86,16 @@ const translations = {
         },
         availability: {
             title: 'Sprawdź dostępność',
-            subtitle: 'Zobacz nasz kalendarz, aby sprawdzić dostępność w wybranych terminach.',
             calendarTitle: 'Kalendarz dostępności',
             bookingInfo: {
                 title: 'Informacje o rezerwacji',
                 minStay: 'Minimalny pobyt: 2 noce',
                 checkIn: 'Czas zameldowania: 14:00',
                 checkOut: 'Czas wymeldowania: 11:00',
-                price: 'Cena: 450 PLN za dobę',
-                noAnimals: 'Przepraszamy, ale zwierzęta nie są dozwolone'
+                noAnimals: 'Zwierzęta nie są dozwolone',
+                noParties: 'Organizowanie imprez jest zabronione',
+                smoking: 'Palenie dozwolone tylko na tarasie',
+                bookingComMessage: 'Sprawdź dostępność i zarezerwuj pobyt bezpiecznie przez Booking.com.'
             }
         },
         location: {
@@ -287,15 +288,16 @@ const translations = {
         },
         availability: {
             title: 'Check Availability',
-            subtitle: 'View our calendar to check availability for your desired dates.',
             calendarTitle: 'Availability Calendar',
             bookingInfo: {
                 title: 'Booking Information',
                 minStay: 'Minimum stay: 2 nights',
                 checkIn: 'Check-in time: 14:00',
                 checkOut: 'Check-out time: 11:00',
-                price: 'Price: 450 PLN per day',
-                noAnimals: 'Sorry, but pets are not allowed'
+                noAnimals: 'Pets are not allowed',
+                noParties: 'Parties are not allowed',
+                smoking: 'Smoking is only allowed on the terrace',
+                bookingComMessage: 'Check availability and book securely via Booking.com.'
             }
         },
         location: {
