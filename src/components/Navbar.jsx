@@ -89,17 +89,18 @@ const Navbar = () => {
               </button>
             </div>
             <Button
+              asChild
               size="sm"
               className="flex items-center gap-2"
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
             >
-              <Send size={16} />
-              <span>{t('nav.book')}</span>
+              <a
+                href="https://www.booking.com/Share-ipKSgh"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Send size={16} />
+                <span>{t('nav.book')}</span>
+              </a>
             </Button>
           </div>
 
@@ -159,17 +160,17 @@ const Navbar = () => {
                 </button>
               </div>
               <Button
+                asChild
                 className="flex items-center justify-center gap-2"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                  setIsMobileMenuOpen(false);
-                }}
               >
-                <Send size={16} />
-                <span>{t('nav.book')}</span>
+                <a
+                  href="https://www.booking.com/Share-ipKSgh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Send size={16} />
+                  <span>{t('nav.book')}</span>
+                </a>
               </Button>
             </div>
           </div>

@@ -16,9 +16,6 @@ const Availability = () => {
         className="text-center mb-12"
       >
         <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('availability.title')}</h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          {t('availability.subtitle')}
-        </p>
       </motion.div>
 
       <motion.div
@@ -28,16 +25,21 @@ const Availability = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="bg-white rounded-lg shadow-lg p-6 mb-8"
       >
-        <div className="calendar-container">
-          <iframe
-            src={`https://calendar.google.com/calendar/embed?src=${import.meta.env.VITE_GOOGLE_CALENDAR_ID}&ctz=Europe%2FWarsaw&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0`}
-            style={{ border: 0 }}
-            width="100%"
-            height="600"
-            frameBorder="0"
-            scrolling="no"
-            title="Availability Calendar"
-          ></iframe>
+        <div className="text-center">
+          <p className="text-lg mb-4">
+            {t('availability.bookingInfo.bookingComMessage') ||
+              (language === 'pl'
+                ? 'Sprawdź dostępność i zarezerwuj pobyt bezpiecznie przez Booking.com.'
+                : 'Check availability and book securely via Booking.com.')}
+          </p>
+          <a
+            href="https://www.booking.com/Share-ipKSgh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-primary-dark transition"
+          >
+            Booking.com
+          </a>
         </div>
       </motion.div>
 
@@ -58,8 +60,9 @@ const Availability = () => {
               <li>• {t('availability.bookingInfo.minStay')}</li>
               <li>• {t('availability.bookingInfo.checkIn')}</li>
               <li>• {t('availability.bookingInfo.checkOut')}</li>
-              <li>• {t('availability.bookingInfo.price')}</li>
               <li>• {t('availability.bookingInfo.noAnimals')}</li>
+              <li>• {t('availability.bookingInfo.noParties')}</li>
+              <li>• {t('availability.bookingInfo.smoking')}</li>
             </ul>
           </div>
         </div>
