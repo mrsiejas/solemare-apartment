@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/mrsiejas/solemare-apartment/compare/v0.3.0...v0.3.1) (2025-06-29)
+
+
+### Bug Fixes
+
+* updated price and animals info ([b58d4ef](https://github.com/mrsiejas/solemare-apartment/commit/b58d4eff6564fd5448cf4d053df98455799e395f))
+
 # [0.3.0](https://github.com/mrsiejas/solemare-apartment/compare/v0.2.0...v0.3.0) (2025-06-23)
 
 
