@@ -93,7 +93,8 @@ const translations = {
                 minStay: 'Minimalny pobyt: 2 noce',
                 checkIn: 'Czas zameldowania: 14:00',
                 checkOut: 'Czas wymeldowania: 11:00',
-                price: 'Cena: 225 PLN za dobę'
+                price: 'Cena: 450 PLN za dobę',
+                noAnimals: 'Przepraszamy, ale zwierzęta nie są dozwolone'
             }
         },
         location: {
@@ -293,7 +294,8 @@ const translations = {
                 minStay: 'Minimum stay: 2 nights',
                 checkIn: 'Check-in time: 14:00',
                 checkOut: 'Check-out time: 11:00',
-                price: 'Price: 225 PLN per day'
+                price: 'Price: 450 PLN per day',
+                noAnimals: 'Sorry, but pets are not allowed'
             }
         },
         location: {
