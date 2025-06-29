@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/mrsiejas/solemare-apartment/compare/v0.3.1...v0.4.0) (2025-06-29)
+
+
+### Features
+
+* move booking to booking.com ([1d6ec9a](https://github.com/mrsiejas/solemare-apartment/commit/1d6ec9a038357ca66ec7a24d337927a650d9e8b8))
+
 ## [0.3.1](https://github.com/mrsiejas/solemare-apartment/compare/v0.3.0...v0.3.1) (2025-06-29)
 
 
